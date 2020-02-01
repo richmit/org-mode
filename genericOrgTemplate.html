@@ -1,0 +1,2376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-31 Fri 22:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TITLE FIXME</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mitch Richling" />
+<meta name="description" content="DESCRIPTION FIXME"
+ />
+<meta name="keywords" content="KEYWORDS FIXME" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style>body { width: 95%; margin: 2% auto; font-size: 18px; line-height: 1.4em; font-family: Georgia, serif; color: black; background-color: white; }</style>
+<style>body { min-width: 500px; max-width: 1024px; }</style>
+<style>h1,h2,h3,h4,h5,h6 { color: #A5573E; line-height: 1em; font-family: Helvetica, sans-serif; }</style>
+<style>h1,h2,h3 { line-height: 1.4em; }</style>
+<style>h1.title { font-size: 3em; }</style>
+<style>h4,h5,h6 { font-size: 1em; }</style>
+<style>.org-src-container { border: 1px solid #ccc; box-shadow: 3px 3px 3px #eee; font-family: Lucida Console, monospace; font-size: 80%; margin: 0px; padding: 0px 0px; position: relative; }</style>
+<style>.org-src-container>pre { line-height: 1.2em; padding-top: 1.5em; margin: 0.5em; background-color: #404040; color: white; overflow: auto; }</style>
+<style>.org-src-container>pre:before { display: block; position: absolute; background-color: #b3b3b3; top: 0; right: 0; padding: 0 0.2em 0 0.4em; border-bottom-left-radius: 8px; border: 0; color: white; font-size: 100%; font-family: Helvetica, sans-serif;}</style>
+<style>pre.example { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; font-family: Lucida Console, monospace; font-size: 80%; background: #404040; color: white; display: block; padding: 0em; border: 2px solid black; }</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">TITLE FIXME</h1>
+<p>
+##+OPTIONS:     tex:dvipng
+</p>
+
+<table border="2 solid #ccc" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" align="center">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right"><b>Author:</b></td>
+<td class="org-left"><i>Mitch Richling</i></td>
+</tr>
+
+<tr>
+<td class="org-right"><b>Updated:</b></td>
+<td class="org-left"><i>2020-01-31 22:00:28</i></td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+Copyright 2020 Mitch Richling. All rights reserved.
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5a23de0">1. Math</a></li>
+<li><a href="#orgac2584b">2. Markup</a>
+<ul>
+<li><a href="#orgc7002f3">2.1. Inline stuff</a></li>
+<li><a href="#orgd6840d3">2.2. Structural stuff</a>
+<ul>
+<li><a href="#orgd29350c">2.2.1. Special Paragraphs</a></li>
+<li><a href="#org4079dcd">2.2.2. Tables</a>
+<ul>
+<li><a href="#org2bde0c5">2.2.2.1. With formatting</a></li>
+<li><a href="#orgbceefe2">2.2.2.2. Tables used to hold data</a></li>
+</ul>
+</li>
+<li><a href="#orgb713378">2.2.3. Lists</a></li>
+</ul>
+</li>
+<li><a href="#orgf4fdffc">2.3. Todo/action items</a>
+<ul>
+<li><a href="#org622a980">2.3.1. <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</a></li>
+<li><a href="#org324e5ae">2.3.2. ACTION:DONE This is an action item &#x2013; work speak. ;)</a></li>
+<li><a href="#org3aaf887">2.3.3. ACTION:NEW This is an item with sub-items <code>[1/2]</code></a>
+<ul>
+<li><a href="#org47d2f9e">2.3.3.1. ACTION:DONE A subitem</a></li>
+<li><a href="#orgc9a4aef">2.3.3.2. ACTION:NEW Another subitem</a></li>
+</ul>
+</li>
+<li><a href="#org75e2c23">2.3.4. ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org92dc114">3. Images</a>
+<ul>
+<li><a href="#orge97472b">3.1. PDFs in LaTeX and Raster Image in HTML</a></li>
+<li><a href="#orgceff59e">3.2. Links to images and converting PDFs to high quality raster images</a></li>
+</ul>
+</li>
+<li><a href="#orgd7d6cda">4. Including external code</a></li>
+<li><a href="#orgc10d772">5. Inline Code</a></li>
+<li><a href="#org4cd0bb4">6. Code Blocks</a>
+<ul>
+<li><a href="#org8ad4fbe">6.1. Text code blocks</a></li>
+<li><a href="#orgace0423">6.2. Email code blocks</a></li>
+<li><a href="#orge57a95c">6.3. Emacs Lisp</a></li>
+<li><a href="#org5a780c0">6.4. Emacs Calc</a></li>
+<li><a href="#org1c78fdd">6.5. Maxima</a></li>
+<li><a href="#orga313a6d">6.6. Shells</a></li>
+<li><a href="#org3c5472e">6.7. Ruby</a></li>
+<li><a href="#org165682f">6.8. Perl</a></li>
+</ul>
+</li>
+<li><a href="#org1532844">7. dot</a></li>
+<li><a href="#org61cb956">8. R</a>
+<ul>
+<li><a href="#orgc7f316c">8.1. Just run some R code in a new session</a></li>
+<li><a href="#org362d089">8.2. Access a table in this document as a data.frame</a></li>
+<li><a href="#org1785e80">8.3. Output from R as a org-mode table</a></li>
+<li><a href="#org0ebd707">8.4. Run some code in a R persistent session (the someData variable is available for later blocks)</a></li>
+<li><a href="#orga556c4f">8.5. Use the someData variable in the session, and draw a graph.</a></li>
+<li><a href="#orgf3746ff">8.6. We can use org-mode to make the file too.</a></li>
+</ul>
+</li>
+<li><a href="#orgfdd62dc">9. Reproduciblity</a>
+<ul>
+<li><a href="#orga39f782">9.1. FILES</a></li>
+<li><a href="#org6563261">9.2. ENVIRONMENT</a>
+<ul>
+<li><a href="#orgc91007b">9.2.1. Embedded Ruby Version</a></li>
+<li><a href="#org94b2e7e">9.2.2. Embedded Perl Version</a></li>
+<li><a href="#org68f75c2">9.2.3. Embedded R Information</a>
+<ul>
+<li><a href="#org6bef5ac">9.2.3.1. R version</a></li>
+<li><a href="#org5b9cdc5">9.2.3.2. Session Information</a></li>
+<li><a href="#orgfe4896b">9.2.3.3. Loaded Package Versions</a></li>
+</ul>
+</li>
+<li><a href="#org0d4839a">9.2.4. Emacs Information</a>
+<ul>
+<li><a href="#org2162977">9.2.4.1. Emacs Version</a></li>
+<li><a href="#orgba8a4b5">9.2.4.2. org-mode Version</a></li>
+<li><a href="#org286c026">9.2.4.3. ESS Version</a></li>
+<li><a href="#org8910f5e">9.2.4.4. Process Environment</a></li>
+<li><a href="#orga641fa0">9.2.4.5. System Type</a></li>
+<li><a href="#orgb4e4a78">9.2.4.6. System Configuration</a></li>
+</ul>
+</li>
+<li><a href="#org9e32524">9.2.5. System Information</a></li>
+<li><a href="#org721af32">9.2.6. Command Line Tool Information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#publishing">10. Publishing</a></li>
+<li><a href="#orgc8e75d3">11. EOF</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5a23de0" class="outline-2">
+<h2 id="org5a23de0"><span class="section-number-2">1</span> Math</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Here is some math \(5+3^4\).
+</p>
+
+<p>
+Reminder: toggle inline preview of an expression with C-c C-x C-l
+</p>
+
+<p>
+Here is some display math \[\sum 4\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgac2584b" class="outline-2">
+<h2 id="orgac2584b"><span class="section-number-2">2</span> Markup</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc7002f3" class="outline-3">
+<h3 id="orgc7002f3"><span class="section-number-3">2.1</span> Inline stuff</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Some <b>bold</b> text.
+</p>
+
+<p>
+Some <i>italics</i> text.
+</p>
+
+<p>
+Some <span class="underline">underlined</span> text.
+</p>
+
+<p>
+Some <code>verbatim</code> text.
+</p>
+
+<p>
+Some <code>code</code> text.
+</p>
+
+<p>
+Some <del>strike-through</del> text.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd6840d3" class="outline-3">
+<h3 id="orgd6840d3"><span class="section-number-3">2.2</span> Structural stuff</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgd29350c" class="outline-4">
+<h4 id="orgd29350c"><span class="section-number-4">2.2.1</span> Special Paragraphs</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Here we have a quote:
+</p>
+<blockquote>
+<p>
+A human being is a part of a whole, called by us <span class="underline">universe</span>, a part limited in time and space. He experiences himself, his thoughts and feelings as something
+separated from the rest&#x2026; a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires
+and to affection for a few persons nearest to us. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all
+living creatures and the whole of nature in its beauty. &#x2013; Albert Einstein
+</p>
+</blockquote>
+
+<p>
+We can also keep newlines intact in an indented paragraph:
+</p>
+<p class="verse">
+Whales Weep Not!<br />
+<br />
+They say the sea is cold, but the sea contains<br />
+the hottest blood of all, and the wildest, the most urgent.<br />
+&#x2026;<br />
+<br />
+&#xa0;&#xa0;&#xa0;&#x2013; D.H. Lawrence<br />
+</p>
+
+<p>
+We can have a "verbatim" section with an "EXAMPLE" block.
+</p>
+<pre class="example">
+     Here is some text.
+Note that
+ everything is    just as typed.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org4079dcd" class="outline-4">
+<h4 id="org4079dcd"><span class="section-number-4">2.2.2</span> Tables</h4>
+<div class="outline-text-4" id="text-2-2-2">
+</div>
+<div id="outline-container-org2bde0c5" class="outline-5">
+<h5 id="org2bde0c5"><span class="section-number-5">2.2.2.1</span> With formatting</h5>
+<div class="outline-text-5" id="text-2-2-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">col 1</th>
+<th scope="col" class="org-left">col 2</th>
+<th scope="col" class="org-right">col 3</th>
+<th scope="col" class="org-left">Col 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">another</td>
+<td class="org-left">bit</td>
+<td class="org-right">1</td>
+<td class="org-left">2</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">b</td>
+<td class="org-right">2</td>
+<td class="org-left">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgbceefe2" class="outline-5">
+<h5 id="orgbceefe2"><span class="section-number-5">2.2.2.2</span> Tables used to hold data</h5>
+<div class="outline-text-5" id="text-2-2-2-2">
+<p>
+Notes:
+</p>
+<ul class="org-ul">
+<li>We have no "top line" on the table &#x2013; otherwise the row of titles is not recognized!!</li>
+<li>Spaces in column titles are transformed into periods for data.frame column names.</li>
+<li>Empty data cells will be NA in the data.frame</li>
+<li>Non-numeric columns will be "characters" not "factors"</li>
+</ul>
+
+<table id="org0222b52" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">factor 1</th>
+<th scope="col" class="org-left">factor 2</th>
+<th scope="col" class="org-right">value 1</th>
+<th scope="col" class="org-right">value 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">z</td>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">x</td>
+<td class="org-right">2</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">y</td>
+<td class="org-right">3</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-left">b</td>
+<td class="org-left">x</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb713378" class="outline-4">
+<h4 id="orgb713378"><span class="section-number-4">2.2.3</span> Lists</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Here is itemized list:
+</p>
+
+<ul class="org-ul">
+<li>first</li>
+<li>second</li>
+<li>third</li>
+</ul>
+
+<p>
+Here is enumerated list:
+</p>
+
+<ol class="org-ol">
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ol>
+
+<p>
+A bit of both:
+</p>
+
+<ol class="org-ol">
+<li>First</li>
+<li>Second
+<ul class="org-ul">
+<li>first</li>
+<li>second</li>
+<li>third</li>
+</ul></li>
+<li>Third</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4fdffc" class="outline-3">
+<h3 id="orgf4fdffc"><span class="section-number-3">2.3</span> Todo/action items</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org622a980" class="outline-4">
+<h4 id="org622a980"><span class="section-number-4">2.3.1</span> <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+</div>
+
+<div id="outline-container-org324e5ae" class="outline-4">
+<h4 id="org324e5ae"><span class="section-number-4">2.3.2</span> ACTION:DONE This is an action item &#x2013; work speak. ;)</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2015-11-01 Sun 22:36] </span> <span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2015-11-01 Sun&gt;</span></span></p>
+</div>
+</div>
+
+<div id="outline-container-org3aaf887" class="outline-4">
+<h4 id="org3aaf887"><span class="section-number-4">2.3.3</span> ACTION:NEW This is an item with sub-items <code>[1/2]</code></h4>
+<div class="outline-text-4" id="text-2-3-3">
+</div>
+<div id="outline-container-org47d2f9e" class="outline-5">
+<h5 id="org47d2f9e"><span class="section-number-5">2.3.3.1</span> ACTION:DONE A subitem</h5>
+<div class="outline-text-5" id="text-2-3-3-1">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2015-11-01 Sun 22:39]</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgc9a4aef" class="outline-5">
+<h5 id="orgc9a4aef"><span class="section-number-5">2.3.3.2</span> ACTION:NEW Another subitem</h5>
+<div class="outline-text-5" id="text-2-3-3-2">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org75e2c23" class="outline-4">
+<h4 id="org75e2c23"><span class="section-number-4">2.3.4</span> ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2015-11-03 Tue&gt; </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2015-11-01 Sun&gt;</span></span></p>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Step 1</li>
+<li class="on"><code>[X]</code> Step 2</li>
+<li class="on"><code>[X]</code> Step 3</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92dc114" class="outline-2">
+<h2 id="org92dc114"><span class="section-number-2">3</span> Images</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orge97472b" class="outline-3">
+<h3 id="orge97472b"><span class="section-number-3">3.1</span> PDFs in LaTeX and Raster Image in HTML</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+In this Section you will see one image.  A PNG for HTML, and a PDF for LaTeX!
+</p>
+
+<div class="HTML">
+<p>
+&lt;div class="figure"&gt;
+ &lt;p&gt;
+   &lt;img src="example.png" alt="example.png" /&gt;
+ &lt;/p&gt;
+&lt;/div&gt;
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgceff59e" class="outline-3">
+<h3 id="orgceff59e"><span class="section-number-3">3.2</span> Links to images and converting PDFs to high quality raster images</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Here we have a pretty graph (in a PNG file):
+</p>
+
+
+<div class="figure">
+<p><img src="example.png" alt="example.png" />
+</p>
+</div>
+
+<p>
+The above file was generated from a high quality PDF file: <a href="example.pdf">example.pdf</a>. Note that the link in the previous sentence is a link in both HTML and LaTeX because
+the link has a 'display text' component.
+</p>
+
+<p>
+The conversion was done like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">convert -density 600 -resize 1024 -background white -flatten example.pdf example.png
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7d6cda" class="outline-2">
+<h2 id="orgd7d6cda"><span class="section-number-2">4</span> Including external code</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Some Ruby code is the file <a href="example.rb">example.rb</a>.  It's contents are listed below:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #ffa500;">#</span><span style="color: #ff7f24;">!/usr/local/bin/ruby</span>
+
+<span style="color: #ffa500;">##</span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@file      hello.rb</span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@author    Mitch Richling <a href="http://www.mitchr.me/">&lt;http://www.mitchr.me/&gt;</a></span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@Copyright Copyright 2006 by Mitch Richling.  All rights reserved.</span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@brief     The classic hello world program the Ruby way.@EOL</span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@Keywords  ruby example hello world</span>
+<span style="color: #ffa500;"># </span><span style="color: #ff7f24;">@Std       Ruby 1.8</span>
+<span style="color: #ffa500;">#</span>
+<span style="color: #ffa500;">#            </span><span style="color: #ff7f24;">The methods puts, print, printf &amp; putc are all in the IO</span>
+<span style="color: #ffa500;">#            </span><span style="color: #ff7f24;">class as well so that they can be used to write to</span>
+<span style="color: #ffa500;">#            </span><span style="color: #ff7f24;">different IO streams.  As used here, they write to</span>
+<span style="color: #ffa500;">#            </span><span style="color: #ff7f24;">STDOUT.</span>
+
+<span style="color: #b0c4de;">puts</span>(<span style="color: #fa8072;">"Hello, World!"</span>)
+
+<span style="color: #b0c4de;">print</span>(<span style="color: #fa8072;">"Hello, World!\n"</span>)
+
+<span style="color: #b0c4de;">printf</span>(<span style="color: #fa8072;">"Hello, World!\n"</span>)
+
+<span style="color: #63b8ff;">STDOUT</span> &lt;&lt; <span style="color: #fa8072;">"Hello, World!\n"</span>
+
+<span style="color: #63b8ff;">STDOUT</span>.write(<span style="color: #fa8072;">"Hello, World!\n"</span>)
+
+<span style="color: #fa8072;">"Hello, World!\n"</span>.each_byte {|b| <span style="color: #b0c4de;">putc</span>(b) }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc10d772" class="outline-2">
+<h2 id="orgc10d772"><span class="section-number-2">5</span> Inline Code</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Here is a number, <code class="src src-elisp">(* 2 3)</code> <code>6</code>, that comes from a bit of elisp code.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4cd0bb4" class="outline-2">
+<h2 id="org4cd0bb4"><span class="section-number-2">6</span> Code Blocks</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org8ad4fbe" class="outline-3">
+<h3 id="org8ad4fbe"><span class="section-number-3">6.1</span> Text code blocks</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Text code blocks can be used as a kind of verbatum environment instead of BEGIN_EXAMPLE.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">&gt; Some Mail
+&gt;&gt; Some More
+&gt;&gt;&gt; Even More
+&gt;&gt;&gt;&gt; Even more
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgace0423" class="outline-3">
+<h3 id="orgace0423"><span class="section-number-3">6.2</span> Email code blocks</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+This is nice because we get some highlighting for quoted e-mails and threads.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-mail"><span style="color: #ff0000;">&gt; Some Mail</span>
+<span style="color: #ff00ff;">&gt;&gt; Some More</span>
+<span style="color: #ff0000;">&gt;&gt;&gt; Even More</span>
+<span style="color: #ff00ff;">&gt;&gt;&gt;&gt; Even more</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge57a95c" class="outline-3">
+<h3 id="orge57a95c"><span class="section-number-3">6.3</span> Emacs Lisp</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+While you can use "value" insead of "output" for code blocks, it really is <b>very</b> usefull for Emacs Lisp.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(+ 1 2 3 5)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a780c0" class="outline-3">
+<h3 id="org5a780c0"><span class="section-number-3">6.4</span> Emacs Calc</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+For more complex mathematical computations done with just Emacs (no outside tools) we can use calc.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-calc">deriv(3*x^2+log(x), x)
+</pre>
+</div>
+
+<pre class="example">
+6 x + 1 / x
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1c78fdd" class="outline-3">
+<h3 id="org1c78fdd"><span class="section-number-3">6.5</span> Maxima</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+For super complex math, we can use maxima.  
+</p>
+
+<p>
+Here we see a  pretty printed result
+</p>
+
+<div class="org-src-container">
+<pre class="src src-maxima"><span style="color: #00ffff;">programmode:</span><span style="color: #8470ff; font-weight: bold;">false</span>;
+d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>(<span style="color: #8470ff; font-weight: bold;">3</span><span style="color: #00ffff;">*</span>x<span style="color: #00ffff;">^</span><span style="color: #8470ff; font-weight: bold;">2</span><span style="color: #00ffff;">+</span><span style="color: #b0c4de;">log</span>(x), x);
+<span style="color: #b0c4de;">print</span>(d);
+</pre>
+</div>
+
+<pre class="example">
+      1
+6 x + - 
+      x
+</pre>
+
+<p>
+Same answer, but 2D printed
+</p>
+
+<div class="org-src-container">
+<pre class="src src-maxima"><span style="color: #00ffff;">programmode:</span><span style="color: #8470ff; font-weight: bold;">false</span>;
+<span style="color: #00ffff;">display2d:</span><span style="color: #8470ff; font-weight: bold;">false</span>;
+d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>(<span style="color: #8470ff; font-weight: bold;">3</span><span style="color: #00ffff;">*</span>x<span style="color: #00ffff;">^</span><span style="color: #8470ff; font-weight: bold;">2</span><span style="color: #00ffff;">+</span><span style="color: #b0c4de;">log</span>(x), x);
+<span style="color: #b0c4de;">print</span>(d);
+</pre>
+</div>
+
+<p>
+Lastly note we can also output things in LaTeX, and get them rendered on export!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-maxima"><span style="color: #00ffff;">programmode:</span><span style="color: #8470ff; font-weight: bold;">false</span>;
+d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>(<span style="color: #8470ff; font-weight: bold;">3</span><span style="color: #00ffff;">*</span>x<span style="color: #00ffff;">^</span><span style="color: #8470ff; font-weight: bold;">2</span><span style="color: #00ffff;">+</span><span style="color: #b0c4de;">log</span>(x), x);
+<span style="color: #b0c4de;">tex</span>(d);
+</pre>
+</div>
+
+<p>
+\[6\,x+{{1}\over{x}}\]
+</p>
+
+<p>
+Another cool application is ot use the <code>fortran</code> function to have maxima spit out results in fortran syntax.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga313a6d" class="outline-3">
+<h3 id="orga313a6d"><span class="section-number-3">6.6</span> Shells</h3>
+<div class="outline-text-3" id="text-6-6">
+<div class="org-src-container">
+<pre class="src src-sh">date <span style="color: #fa8072;">"+%Y-%m-%d %H:%M:%S"</span>
+</pre>
+</div>
+
+<pre class="example">
+2020-01-22 15:08:04
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3c5472e" class="outline-3">
+<h3 id="org3c5472e"><span class="section-number-3">6.7</span> Ruby</h3>
+<div class="outline-text-3" id="text-6-7">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #b0c4de;">puts</span>(<span style="color: #fa8072;">"HI MOM"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org165682f" class="outline-3">
+<h3 id="org165682f"><span class="section-number-3">6.8</span> Perl</h3>
+<div class="outline-text-3" id="text-6-8">
+<div class="org-src-container">
+<pre class="src src-perl">print <span style="color: #fa8072;">"HI MOM\n"</span>;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1532844" class="outline-2">
+<h2 id="org1532844"><span class="section-number-2">7</span> dot</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Here we do not export the code, just the results &#x2013; as an image.  This results in a nice rendering.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dot">graph {
+ A -- B;
+}
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="dotResult.png" alt="dotResult.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61cb956" class="outline-2">
+<h2 id="org61cb956"><span class="section-number-2">8</span> R</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orgc7f316c" class="outline-3">
+<h3 id="orgc7f316c"><span class="section-number-3">8.1</span> Just run some R code in a new session</h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+<pre class="src src-R">print(<span style="color: #fa8072;">"HI MOM"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org362d089" class="outline-3">
+<h3 id="org362d089"><span class="section-number-3">8.2</span> Access a table in this document as a data.frame</h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+<pre class="src src-R">someData
+</pre>
+</div>
+
+<pre class="example">
+[1] "factor"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1785e80" class="outline-3">
+<h3 id="org1785e80"><span class="section-number-3">8.3</span> Output from R as a org-mode table</h3>
+<div class="outline-text-3" id="text-8-3">
+<div class="org-src-container">
+<pre class="src src-R">someData
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">z</td>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">x</td>
+<td class="org-right">2</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">y</td>
+<td class="org-right">3</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-left">b</td>
+<td class="org-left">x</td>
+<td class="org-right">4</td>
+<td class="org-right">nil</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org0ebd707" class="outline-3">
+<h3 id="org0ebd707"><span class="section-number-3">8.4</span> Run some code in a R persistent session (the someData variable is available for later blocks)</h3>
+<div class="outline-text-3" id="text-8-4">
+<div class="org-src-container">
+<pre class="src src-R">someData <span style="color: #8470ff; font-weight: bold;">&lt;-</span> data.frame(a=1:10, b=rnorm(10))
+print(someData)
+</pre>
+</div>
+
+<pre class="example">
+    a           b
+1   1 -1.48729577
+2   2 -0.07218193
+3   3 -0.29358047
+4   4  0.62614601
+5   5 -0.02800536
+6   6  0.43488620
+7   7  0.16883341
+8   8  1.81872302
+9   9  1.28414530
+10 10 -0.78237244
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga556c4f" class="outline-3">
+<h3 id="orga556c4f"><span class="section-number-3">8.5</span> Use the someData variable in the session, and draw a graph.</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+No speical org-mode stuff for graphics.  Just saved the output in files via R.  Add link text later.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">g <span style="color: #8470ff; font-weight: bold;">&lt;-</span> ggplot(someData, aes(x=a, y=b)) + geom_line()
+ggsave(<span style="color: #fa8072;">"rOut1.png"</span>, width=8, height=6, dpi=100, units=<span style="color: #fa8072;">'in'</span>, plot=g);
+ggsave(<span style="color: #fa8072;">"rOut1.pdf"</span>, width=8, height=6, dpi=600, units=<span style="color: #fa8072;">'in'</span>, plot=g);
+</pre>
+</div>
+
+<p>
+The graph:
+</p>
+
+
+<div class="figure">
+<p><img src="rOut1.png" alt="rOut1.png" />
+</p>
+</div>
+
+<p>
+A high quality PDF version is <a href="rOut1.pdf">here</a> &#x2013; note the "here" is a link for both LaTeX and HTML.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf3746ff" class="outline-3">
+<h3 id="orgf3746ff"><span class="section-number-3">8.6</span> We can use org-mode to make the file too.</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+Note: :session is required for this to work &#x2013; otherwise we must "print" the graphic.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">ggplot(someData, aes(x=a, y=b)) + geom_line()
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="rOut1.png" alt="rOut1.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfdd62dc" class="outline-2">
+<h2 id="orgfdd62dc"><span class="section-number-2">9</span> Reproduciblity</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+This section is here to help anyone wishing to reproduce the results above, or to understand the mechanics of how the results were obtained..
+</p>
+
+<p>
+Reminder: All blocks in the entire tree can be evaluated with C-C C-V C-S
+</p>
+</div>
+
+<div id="outline-container-orga39f782" class="outline-3">
+<h3 id="orga39f782"><span class="section-number-3">9.1</span> FILES</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+Documented in this section are (for each file in this archive):
+</p>
+
+<ul class="org-ul">
+<li>SHA1</li>
+<li>Output from an 'ls -l' command</li>
+<li>Output from the 'wc' command &#x2013; byte, word, and line counts</li>
+</ul>
+
+<p>
+The use cases are two fold:
+</p>
+
+<ul class="org-ul">
+<li>Insure that the input data files being used are the same</li>
+<li>Check if reproduced results match</li>
+</ul>
+
+<p>
+Replace the <code>`find ./ -type f`</code> with a list of files and/or wildcards to explicitly select the desired files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">date
+<span style="color: #00ffff;">for</span> c<span style="color: #00ffff;"> in</span> wc <span style="color: #fa8072;">'openssl sha1'</span> <span style="color: #fa8072;">'ls -l'</span> ; <span style="color: #00ffff;">do</span>
+    <span style="color: #b0c4de;">echo</span> $<span style="color: #7fffd4;">c</span>; $<span style="color: #7fffd4;">c</span> <span style="color: #bf3eff; font-weight: bold;">`find ./ -type f`</span>
+<span style="color: #00ffff;">done</span>
+</pre>
+</div>
+
+<pre class="example">
+Wed, Jan 22, 2020 11:08:31 PM
+wc
+      0       1      30 ./.#genericOrgTemplate.org
+     73      81    1268 ./auto/genericOrgTemplate.el
+     23      79    3063 ./dotResult.png
+    186     683   16335 ./example.pdf
+   1316    7419  347721 ./example.png
+     26      96     695 ./example.rb
+     10      10     149 ./files_to_publish
+     11      11     157 ./files_to_publish_before
+   1366    5177   54165 ./genericOrgTemplate.html
+   1371    5185   54236 ./genericOrgTemplate.html~
+    636    2886   21429 ./genericOrgTemplate.org
+    615    2736   20681 ./genericOrgTemplate.org~
+   5312   13987  457794 ./genericOrgTemplate.pdf
+    623    2019   17088 ./genericOrgTemplate.tex
+     80     274    4458 ./rOut1.pdf
+     45     328    7486 ./rOut1.png
+     21     229    7185 ./rOut2.png
+  11714   41201 1013940 total
+openssl sha1
+SHA1(./.#genericOrgTemplate.org)= 62941e0a5896f2b4efe7e63e97b054a866ec3f02
+SHA1(./auto/genericOrgTemplate.el)= 1792aa6f454e97af4f40b729b55cba5f175fe622
+SHA1(./dotResult.png)= 0aee67ef545690ac2edfacca997a2830bf52e5bd
+SHA1(./example.pdf)= 32331c8ba2289b7b3c44b494c738ef0ad9973980
+SHA1(./example.png)= d193ac9077e6616ee3d849184453195c414c49c9
+SHA1(./example.rb)= ee55cdae5e8017b96fe18ab376356ff6d610ab78
+SHA1(./files_to_publish)= f8b013770c45ea8efdf4eeb135e53023f756233d
+SHA1(./files_to_publish_before)= f912ac87b274c3575fe7617f4d582abb75118784
+SHA1(./genericOrgTemplate.html)= 5f171f9bb3c3b0cca8b45bfe3badb53c1b310c60
+SHA1(./genericOrgTemplate.html~)= 1639270987f332dd9419256c9078385257bf3f52
+SHA1(./genericOrgTemplate.org)= 98295573751daf0a7f77084b8d3c502fc7cb4f91
+SHA1(./genericOrgTemplate.org~)= 7d1a924a6300d622abcf42fcad1660952b7b442e
+SHA1(./genericOrgTemplate.pdf)= c1cb58664f48963eccab99496debd518f92a1a5d
+SHA1(./genericOrgTemplate.tex)= d4982cfaeb44e15954aff17ac0977b2743c6a4ab
+SHA1(./rOut1.pdf)= f165e5c93e05c20ec4264e7418dd620b120e77e5
+SHA1(./rOut1.png)= 285f7b2b81e15fd96e4cc1d3fc7f6a0f0042baca
+SHA1(./rOut2.png)= d6e8fd09c7a3bbbc7fbd1adab8325243e8d23fad
+ls -l
+-rw-r--r-- 1 richmit None     30 Jan 22 23:08 ./.#genericOrgTemplate.org
+-rw-r--r-- 1 richmit None   1268 May 29  2016 ./auto/genericOrgTemplate.el
+-rw-r--r-- 1 richmit None   3063 Jan 22 14:47 ./dotResult.png
+-rw-r--r-- 1 richmit None  16335 May 30  2015 ./example.pdf
+-rw-r--r-- 1 richmit None 347721 May 30  2015 ./example.png
+-rwxr-xr-x 1 richmit None    695 May 30  2015 ./example.rb
+-rw-r--r-- 1 richmit None    149 Jan 22 14:47 ./files_to_publish
+-rw-r--r-- 1 richmit None    157 Jan 22 14:47 ./files_to_publish_before
+-rw-r--r-- 1 richmit None  54165 Jan 22 23:08 ./genericOrgTemplate.html
+-rw-r--r-- 1 richmit None  54236 Jan 22 23:05 ./genericOrgTemplate.html~
+-rw-r--r-- 1 richmit None  21429 Jan 22 23:08 ./genericOrgTemplate.org
+-rw-r--r-- 1 richmit None  20681 Jan 22 14:53 ./genericOrgTemplate.org~
+-rw-r--r-- 1 richmit None 457794 May 29  2016 ./genericOrgTemplate.pdf
+-rw-r--r-- 1 richmit None  17088 May 29  2016 ./genericOrgTemplate.tex
+-rw-r--r-- 1 richmit None   4458 Jan 22 23:07 ./rOut1.pdf
+-rw-r--r-- 1 richmit None   7486 Jan 22 23:07 ./rOut1.png
+-rw-r--r-- 1 richmit None   7185 Jan 22 23:07 ./rOut2.png
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6563261" class="outline-3">
+<h3 id="org6563261"><span class="section-number-3">9.2</span> ENVIRONMENT</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+The input files are only part of the reproduciblity equation.  It is also important to understand the tools and computational environment used for the
+original analysis.  This section contains various bits of meta-data about the tools and system I used for this analysis.
+</p>
+</div>
+
+<div id="outline-container-orgc91007b" class="outline-4">
+<h4 id="orgc91007b"><span class="section-number-4">9.2.1</span> Embedded Ruby Version</h4>
+<div class="outline-text-4" id="text-9-2-1">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #b0c4de;">puts</span>(<span style="color: #63b8ff;">RUBY_VERSION</span>)
+</pre>
+</div>
+
+<pre class="example">
+2.6.3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org94b2e7e" class="outline-4">
+<h4 id="org94b2e7e"><span class="section-number-4">9.2.2</span> Embedded Perl Version</h4>
+<div class="outline-text-4" id="text-9-2-2">
+<div class="org-src-container">
+<pre class="src src-perl">print $]
+</pre>
+</div>
+
+<pre class="example">
+5.030000
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org68f75c2" class="outline-4">
+<h4 id="org68f75c2"><span class="section-number-4">9.2.3</span> Embedded R Information</h4>
+<div class="outline-text-4" id="text-9-2-3">
+</div>
+<div id="outline-container-org6bef5ac" class="outline-5">
+<h5 id="org6bef5ac"><span class="section-number-5">9.2.3.1</span> R version</h5>
+<div class="outline-text-5" id="text-9-2-3-1">
+<div class="org-src-container">
+<pre class="src src-R">R.version
+</pre>
+</div>
+
+<pre class="example">
+               _                           
+platform       x86_64-w64-mingw32          
+arch           x86_64                      
+os             mingw32                     
+system         x86_64, mingw32             
+status                                     
+major          3                           
+minor          5.3                         
+year           2019                        
+month          03                          
+day            11                          
+svn rev        76217                       
+language       R                           
+version.string R version 3.5.3 (2019-03-11)
+nickname       Great Truth                 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5b9cdc5" class="outline-5">
+<h5 id="org5b9cdc5"><span class="section-number-5">9.2.3.2</span> Session Information</h5>
+<div class="outline-text-5" id="text-9-2-3-2">
+<div class="org-src-container">
+<pre class="src src-R">sessionInfo()
+</pre>
+</div>
+
+<pre class="example">
+R version 3.5.3 (2019-03-11)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 18363)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252    LC_MONETARY=English_United States.1252 LC_NUMERIC=C                           LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] graphics  grDevices datasets  utils     grid      stats     methods   base     
+
+other attached packages:
+ [1] RevoUtils_11.0.3     RColorBrewer_1.1-2   reshape2_1.4.3       scales_1.0.0         ggplot2_3.1.1        tidyr_0.8.3          dplyr_0.8.0.1        data.table_1.12.2    gridExtra_2.3       
+[10] jsonlite_1.5         knitr_1.22           lattice_0.20-38      RevoUtilsMath_11.0.0
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.1       magrittr_1.5     tidyselect_0.2.5 munsell_0.5.0    colorspace_1.4-1 R6_2.3.0         rlang_0.3.4      stringr_1.4.0    plyr_1.8.4       tools_3.5.3      gtable_0.3.0    
+[12] xfun_0.6         withr_2.1.2      lazyeval_0.2.2   assertthat_0.2.1 tibble_2.1.1     crayon_1.3.4     purrr_0.3.2      glue_1.3.1       stringi_1.4.3    compiler_3.5.3   pillar_1.3.1    
+[23] pkgconfig_2.0.2 
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgfe4896b" class="outline-5">
+<h5 id="orgfe4896b"><span class="section-number-5">9.2.3.3</span> Loaded Package Versions</h5>
+<div class="outline-text-5" id="text-9-2-3-3">
+<div class="org-src-container">
+<pre class="src src-R">installed.packages()[(loadedNamespaces()),c(<span style="color: #fa8072;">'Version'</span>, <span style="color: #fa8072;">'LibPath'</span>)]
+</pre>
+</div>
+
+<pre class="example">
+              Version   LibPath                                                                  
+Rcpp          "1.0.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+knitr         "1.22"    "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+magrittr      "1.5"     "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+grDevices     "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+tidyselect    "0.2.5"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+munsell       "0.5.0"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+colorspace    "1.4-1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+lattice       "0.20-38" "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+R6            "2.3.0"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+rlang         "0.3.4"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+RevoUtilsMath "11.0.0"  "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+stringr       "1.4.0"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+plyr          "1.8.4"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+dplyr         "0.8.0.1" "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+tools         "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+utils         "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+grid          "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+data.table    "1.12.2"  "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+gtable        "0.3.0"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+xfun          "0.6"     "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+withr         "2.1.2"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+datasets      "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+stats         "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+lazyeval      "0.2.2"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+assertthat    "0.2.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+tibble        "2.1.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+base          "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+crayon        "1.3.4"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+gridExtra     "2.3"     "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+RColorBrewer  "1.1-2"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+reshape2      "1.4.3"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+purrr         "0.3.2"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+ggplot2       "3.1.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+tidyr         "0.8.3"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+graphics      "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+glue          "1.3.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+stringi       "1.4.3"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+compiler      "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+pillar        "1.3.1"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+methods       "3.5.3"   "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+RevoUtils     "11.0.3"  "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+scales        "1.0.0"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+jsonlite      "1.5"     "C:/Program Files/Microsoft/R Open/R-3.5.3/library"                      
+pkgconfig     "2.0.2"   "c:/Users/richmit/Documents/R/win-library/x86_64-w64-mingw32-3.5.3/opkgs"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d4839a" class="outline-4">
+<h4 id="org0d4839a"><span class="section-number-4">9.2.4</span> Emacs Information</h4>
+<div class="outline-text-4" id="text-9-2-4">
+</div>
+<div id="outline-container-org2162977" class="outline-5">
+<h5 id="org2162977"><span class="section-number-5">9.2.4.1</span> Emacs Version</h5>
+<div class="outline-text-5" id="text-9-2-4-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(emacs-version)
+</pre>
+</div>
+
+<pre class="example">
+"GNU Emacs 26.2 (build 1, x86_64-w64-mingw32)
+ of 2019-06-03"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgba8a4b5" class="outline-5">
+<h5 id="orgba8a4b5"><span class="section-number-5">9.2.4.2</span> org-mode Version</h5>
+<div class="outline-text-5" id="text-9-2-4-2">
+<div class="org-src-container">
+<pre class="src src-elisp">org-version
+</pre>
+</div>
+
+<pre class="example">
+"9.1.14"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org286c026" class="outline-5">
+<h5 id="org286c026"><span class="section-number-5">9.2.4.3</span> ESS Version</h5>
+<div class="outline-text-5" id="text-9-2-4-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(ess-version)
+</pre>
+</div>
+
+<pre class="example">
+"ess-version: 18.10.3snapshot [elpa: 20200103.915] (loaded from c:/msys64/home/richmit/.emacs.d/elpa/ess-20200103.915/)"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8910f5e" class="outline-5">
+<h5 id="org8910f5e"><span class="section-number-5">9.2.4.4</span> Process Environment</h5>
+<div class="outline-text-5" id="text-9-2-4-4">
+<div class="org-src-container">
+<pre class="src src-elisp">process-environment
+</pre>
+</div>
+
+<pre class="example">
+("tmp=C:\\Users\\richmit\\AppData\\Local\\Temp" "temp=C:\\Users\\richmit\\AppData\\Local\\Temp" "WINDIR=C:\\WINDOWS" "VISIT_MPIEXEC=C:\\Program Files\\Microsoft MPI\\Bin\\mpiexec.exe" "VISITPLUGININSTPUB=C:\\Program Files\\LLNL\\VisIt 2.13.3" "VISITPLUGININSTPRI=C:\\Users\\richmit\\AppData\\Roaming\\LLNL\\VisIt" "VISITLOC=C:\\Program Files\\LLNL\\VisIt 2.13.3" "VISITARCHHOME=C:\\Program Files\\LLNL\\VisIt 2.13.3" "USERPROFILE=C:\\Users\\richmit" "USERNAME=richmit" "USERDOMAIN_ROAMINGPROFILE=HOFUD" "USERDOMAIN=HOFUD" "USER=richmit" "TMUX_PANE=%7" "TMUX=C:/msys64/home/richmit/tmp/tmux/sockets/0_hofud,441,0" "TMP=C:\\msys64\\tmp" "TEXINPUTS=.;C:\\msys64\\home\\richmit\\core\\texinputs;" "TERM=dumb" "TEMP=C:\\msys64\\tmp" "SYSTEMROOT=C:\\WINDOWS" "SYSTEMDRIVE=C:" "SHLVL=4" "SHELL=C:/msys64/usr/bin/zsh" "SESSIONNAME=Console" "SBCL_HOME=C:\\Program Files\\Steel Bank Common Lisp\\1.4.14\\" "ProgramW6432=C:\\Program Files" "ProgramFiles(x86)=C:\\Program Files (x86)" "ProgramData=C:\\ProgramData" "PWD=C:/msys64/home/richmit" "PUBLIC=C:\\Users\\Public" "PSModulePath=C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules" "PROGRAMFILES=C:\\Program Files" "PROCESSOR_REVISION=8e0a" "PROCESSOR_LEVEL=6" "PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel" "PROCESSOR_ARCHITECTURE=AMD64" "PRINTER=Microsoft Print to PDF" "PKG_CONFIG_PATH=C:\\msys64\\mingw64\\lib\\pkgconfig;C:\\msys64\\mingw64\\share\\pkgconfig" "PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" "PATH=.;C:\\msys64\\home\\richmit\\bin;C:\\texlive\\2018\\bin\\win32;C:\\msys64\\mingw64\\bin;C:\\msys64\\mingw32\\bin;C:\\msys64\\usr\\local\\bin;C:\\msys64\\mingw32\\sbin;C:\\msys64\\mingw32\\bin;C:\\msys64\\mingw64\\sbin;C:\\msys64\\mingw64\\bin;C:\\msys64\\usr\\sbin;C:\\msys64\\usr\\bin;C:\\msys64\\usr\\bin;C:\\Windows\\System32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\" "PAGER=C:/msys64/usr/bin/less" "OneDriveConsumer=C:\\Users\\richmit\\OneDrive" "OneDrive=C:\\Users\\richmit\\OneDrive" "OS=Windows_NT" "ORIGINAL_TMP=C:/Users/richmit/AppData/Local/Temp" "ORIGINAL_TEMP=C:/Users/richmit/AppData/Local/Temp" "ORIGINAL_PATH=C:\\Windows\\System32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\" "OLDPWD=C:/msys64/home/richmit/world/dotfiles/.emacs.d" "NUMBER_OF_PROCESSORS=8" "MYAPPS=C:/msys64/home/richmit/local" "MSYSTEM_PREFIX=C:/msys64/mingw64" "MSYSTEM_CHOST=x86_64-w64-mingw32" "MSYSTEM_CARCH=x86_64" "MSYSTEM=MINGW64" "MSYSCON=mintty.exe" "MSMPI_BIN=C:\\Program Files\\Microsoft MPI\\Bin\\" "MINGW_PREFIX=C:/msys64/mingw64" "MINGW_PACKAGE_PREFIX=mingw-w64-x86_64" "MINGW_CHOST=x86_64-w64-mingw32" "MANPATH=C:\\msys64\\usr\\share\\man;C:\\msys64\\mingw64\\share\\man;C:\\msys64\\mingw32\\share\\man" "LOGONSERVER=\\\\HOFUD" "LOGNAME=richmit" "LOCALAPPDATA=C:\\Users\\richmit\\AppData\\Local" "LANG=en_US.UTF-8" "INFOPATH=C:\\msys64\\usr\\share\\info;C:\\msys64\\mingw64\\share\\info;C:\\msys64\\mingw32\\share\\info" "IGNOREEOF=10" "HOSTNAME=hofud" "HOMEPATH=\\Users\\richmit" "HOMEDRIVE=C:" "HOME=C:\\msys64\\home\\richmit" "FPS_BROWSER_USER_PROFILE_STRING=Default" "FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer" "EDITOR=C:/msys64/usr/bin/vim" "DriverData=C:\\Windows\\System32\\Drivers\\DriverData" "CommonProgramW6432=C:\\Program Files\\Common Files" "CommonProgramFiles(x86)=C:\\Program Files (x86)\\Common Files" "CONFIG_SITE=C:/msys64/mingw64/etc/config.site" "COMSPEC=C:\\WINDOWS\\system32\\cmd.exe" "COMPUTERNAME=HOFUD" "COMMONPROGRAMFILES=C:\\Program Files\\Common Files" "COMMONAPPDATA=C:\\ProgramData" "BIBINPUTS=.;" "APPDATA=C:\\Users\\richmit\\AppData\\Roaming" "ALLUSERSPROFILE=C:\\ProgramData" "ACLOCAL_PATH=C:\\msys64\\mingw64\\share\\aclocal;C:\\msys64\\usr\\share\\aclocal" "!;=;\\")
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga641fa0" class="outline-5">
+<h5 id="orga641fa0"><span class="section-number-5">9.2.4.5</span> System Type</h5>
+<div class="outline-text-5" id="text-9-2-4-5">
+<div class="org-src-container">
+<pre class="src src-elisp">system-type
+</pre>
+</div>
+
+<pre class="example">
+windows-nt
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb4e4a78" class="outline-5">
+<h5 id="orgb4e4a78"><span class="section-number-5">9.2.4.6</span> System Configuration</h5>
+<div class="outline-text-5" id="text-9-2-4-6">
+<div class="org-src-container">
+<pre class="src src-elisp">system-configuration
+</pre>
+</div>
+
+<pre class="example">
+"x86_64-w64-mingw32"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9e32524" class="outline-4">
+<h4 id="org9e32524"><span class="section-number-4">9.2.5</span> System Information</h4>
+<div class="outline-text-4" id="text-9-2-5">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #00ffff;">for</span> e<span style="color: #00ffff;"> in</span> date whoami groups id hostname domainname dnsdomainname <span style="color: #fa8072;">'ifconfig -a'</span> <span style="color: #fa8072;">'uname -a'</span> <span style="color: #fa8072;">'openssl version'</span> locale <span style="color: #fa8072;">'ldconfig -p'</span> <span style="color: #fa8072;">'dpkg-query -l'</span>; <span style="color: #00ffff;">do</span>
+  <span style="color: #7fffd4;">c</span>=<span style="color: #bf3eff; font-weight: bold;">`echo $e | awk '{print $1}'`</span>;
+  <span style="color: #00ffff;">if </span><span style="color: #b0c4de;">hash</span> $<span style="color: #7fffd4;">c</span> 1&gt;/dev/null 2&gt;/dev/null; <span style="color: #00ffff;">then</span> 
+    ruby -e <span style="color: #fa8072;">'puts("="*90)'</span>
+    <span style="color: #b0c4de;">echo</span> $<span style="color: #7fffd4;">e</span>
+    sh -c <span style="color: #fa8072;">"$e"</span>
+  <span style="color: #00ffff;">fi</span>
+<span style="color: #00ffff;">done</span>
+</pre>
+</div>
+
+<pre class="example">
+==========================================================================================
+date
+Wed, Jan 22, 2020 11:08:43 PM
+==========================================================================================
+whoami
+richmit
+==========================================================================================
+groups
+None Users Performance Log Users INTERACTIVE CONSOLE LOGON Authenticated Users This Organization Local account CurrentSession LOCAL NTLM Authentication Medium Mandatory Level
+==========================================================================================
+id
+uid=197609(richmit) gid=197121(None) groups=197121(None),545(Users),559(Performance Log Users),4(INTERACTIVE),66049(CONSOLE LOGON),11(Authenticated Users),15(This Organization),113(Local account),4095(CurrentSession),66048(LOCAL),262154(NTLM Authentication),401408(Medium Mandatory Level)
+==========================================================================================
+hostname
+hofud
+==========================================================================================
+dnsdomainname
+==========================================================================================
+uname -a
+MINGW64_NT-10.0-18363 hofud 3.0.7-338.x86_64 2019-07-11 10:58 UTC x86_64 Msys
+==========================================================================================
+openssl version
+OpenSSL 1.1.1c  28 May 2019
+==========================================================================================
+locale
+LANG=en_US.UTF-8
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_ALL=
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org721af32" class="outline-4">
+<h4 id="org721af32"><span class="section-number-4">9.2.6</span> Command Line Tool Information</h4>
+<div class="outline-text-4" id="text-9-2-6">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #00ffff;">for</span> e<span style="color: #00ffff;"> in</span> gcc g++ gfortran                               <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         wc ls grep sed awk cut sort uniq               <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         bash ksh tcsh dash csh sh zsh                  <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         vi vim emacs em                                <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         ruby ruby1.8 ruby2 python3 python2 perl        <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         gnuplot maxima octave M2 gap julia R           <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         qtiplot ggobi                                  <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         povray                                         <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         openscad xcircuit                              <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         convert pqiv import display                    <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         gs pdftex pdflatex tex latex dvips             <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         sbcl clisp ecl ccl                             <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         diff diff3 patch merge                         <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         sqlite3 mysqld                                 <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         paraview visit                                 <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         grass                                          <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>
+         tar gzip bzip2 ; <span style="color: #00ffff;">do</span>
+  ruby -e <span style="color: #fa8072;">'puts("="*90)'</span>
+  <span style="color: #b0c4de;">echo</span> <span style="color: #fa8072;">"Tool: $e"</span>
+  <span style="color: #00ffff;">if </span><span style="color: #b0c4de;">hash</span> $<span style="color: #7fffd4;">e</span> 1&gt;/dev/null 2&gt;/dev/null; <span style="color: #00ffff;">then</span> 
+    <span style="color: #7fffd4;">CPH</span>=<span style="color: #bf3eff; font-weight: bold;">`which $e`</span>
+    <span style="color: #00ffff;">if</span> [ -n <span style="color: #fa8072;">"$CPH"</span> -a -e <span style="color: #fa8072;">"$CPH"</span> ] ; <span style="color: #00ffff;">then</span>
+      <span style="color: #b0c4de;">echo</span> $<span style="color: #7fffd4;">CPH</span>    | sed <span style="color: #fa8072;">'s/^/  Path: /'</span>
+      ls -ld $<span style="color: #7fffd4;">CPH</span>  | sed <span style="color: #fa8072;">'s/^/  ls-l: /'</span>
+      $<span style="color: #7fffd4;">e</span> --version | sed <span style="color: #fa8072;">'s/^/  Ver:  /'</span>
+    <span style="color: #00ffff;">else</span>
+      <span style="color: #b0c4de;">echo</span> <span style="color: #fa8072;">"  Unable to locate (which): $e"</span>
+    <span style="color: #00ffff;">fi</span>
+  <span style="color: #00ffff;">else</span>
+    <span style="color: #b0c4de;">echo</span> <span style="color: #fa8072;">"  Unable to locate (hash): $e"</span>
+  <span style="color: #00ffff;">fi</span>
+<span style="color: #00ffff;">done</span>
+ruby -e <span style="color: #fa8072;">'puts("="*90)'</span>
+</pre>
+</div>
+
+<pre class="example">
+==========================================================================================
+Tool: gcc
+  Path: /mingw64/bin/gcc
+  ls-l: -rwxr-xr-x 1 richmit None 2137193 Aug 12 05:14 /mingw64/bin/gcc
+  Ver:  gcc.exe (Rev1, Built by MSYS2 project) 9.2.0
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  This is free software; see the source for copying conditions.  There is NO
+  Ver:  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  Ver:  
+==========================================================================================
+Tool: g++
+  Path: /mingw64/bin/g++
+  ls-l: -rwxr-xr-x 1 richmit None 2139753 Aug 12 05:14 /mingw64/bin/g++
+  Ver:  g++.exe (Rev1, Built by MSYS2 project) 9.2.0
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  This is free software; see the source for copying conditions.  There is NO
+  Ver:  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  Ver:  
+==========================================================================================
+Tool: gfortran
+  Path: /mingw64/bin/gfortran
+  ls-l: -rwxr-xr-x 1 richmit None 2139753 Aug 12 05:14 /mingw64/bin/gfortran
+  Ver:  GNU Fortran (Rev1, Built by MSYS2 project) 9.2.0
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  This is free software; see the source for copying conditions.  There is NO
+  Ver:  warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  Ver:  
+==========================================================================================
+Tool: wc
+  Path: /usr/bin/wc
+  ls-l: -rwxr-xr-x 1 richmit None 42594 Apr 25  2019 /usr/bin/wc
+  Ver:  wc (GNU coreutils) 8.31
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Paul Rubin and David MacKenzie.
+==========================================================================================
+Tool: ls
+  Path: /usr/bin/ls
+  ls-l: -rwxr-xr-x 1 richmit None 139682 Apr 25  2019 /usr/bin/ls
+  Ver:  ls (GNU coreutils) 8.31
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Richard M. Stallman and David MacKenzie.
+==========================================================================================
+Tool: grep
+  Path: /usr/bin/grep
+  ls-l: -rwxr-xr-x 1 richmit None 210195 Dec  5  2018 /usr/bin/grep
+  Ver:  grep (GNU grep) 3.0
+  Ver:  Copyright (C) 2017 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Mike Haertel and others, see &lt;http://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS&gt;.
+==========================================================================================
+Tool: sed
+  Path: /usr/bin/sed
+  ls-l: -rwxr-xr-x 1 richmit None 172307 Dec 26  2018 /usr/bin/sed
+  Ver:  sed (GNU sed) 4.7
+  Ver:  Copyright (C) 2018 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Jay Fenlason, Tom Lord, Ken Pizzini,
+  Ver:  Paolo Bonzini, Jim Meyering, and Assaf Gordon.
+  Ver:  GNU sed home page: &lt;https://www.gnu.org/software/sed/&gt;.
+  Ver:  General help using GNU software: &lt;https://www.gnu.org/gethelp/&gt;.
+  Ver:  E-mail bug reports to: &lt;bug-sed@gnu.org&gt;.
+==========================================================================================
+Tool: awk
+  Path: /usr/bin/awk
+  ls-l: -rwxr-xr-x 1 richmit None 626954 Jun 24  2019 /usr/bin/awk
+  Ver:  GNU Awk 5.0.1, API: 2.0 (GNU MPFR 4.0.2, GNU MP 6.1.2)
+  Ver:  Copyright (C) 1989, 1991-2019 Free Software Foundation.
+  Ver:  
+  Ver:  This program is free software; you can redistribute it and/or modify
+  Ver:  it under the terms of the GNU General Public License as published by
+  Ver:  the Free Software Foundation; either version 3 of the License, or
+  Ver:  (at your option) any later version.
+  Ver:  
+  Ver:  This program is distributed in the hope that it will be useful,
+  Ver:  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  Ver:  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  Ver:  GNU General Public License for more details.
+  Ver:  
+  Ver:  You should have received a copy of the GNU General Public License
+  Ver:  along with this program. If not, see http://www.gnu.org/licenses/.
+==========================================================================================
+Tool: cut
+  Path: /usr/bin/cut
+  ls-l: -rwxr-xr-x 1 richmit None 42378 Apr 25  2019 /usr/bin/cut
+  Ver:  cut (GNU coreutils) 8.31
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by David M. Ihnat, David MacKenzie, and Jim Meyering.
+==========================================================================================
+Tool: sort
+  Path: /usr/bin/sort
+  ls-l: -rwxr-xr-x 1 richmit None 106313 Apr 25  2019 /usr/bin/sort
+  Ver:  sort (GNU coreutils) 8.31
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Mike Haertel and Paul Eggert.
+==========================================================================================
+Tool: uniq
+  Path: /usr/bin/uniq
+  ls-l: -rwxr-xr-x 1 richmit None 42325 Apr 25  2019 /usr/bin/uniq
+  Ver:  uniq (GNU coreutils) 8.31
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Richard M. Stallman and David MacKenzie.
+==========================================================================================
+Tool: bash
+  Path: /usr/local/bin/bash
+  ls-l: lrwxrwxrwx 1 richmit None 17 Dec 28  2018 /usr/local/bin/bash -&gt; /usr/bin/bash.exe
+  Ver:  GNU bash, version 4.4.23(1)-release (x86_64-pc-msys)
+  Ver:  Copyright (C) 2016 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+  Ver:  
+  Ver:  This is free software; you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+==========================================================================================
+Tool: ksh
+  Unable to locate (hash): ksh
+==========================================================================================
+Tool: tcsh
+  Unable to locate (hash): tcsh
+==========================================================================================
+Tool: dash
+  Path: /usr/bin/dash
+  ls-l: -rwxr-xr-x 1 richmit None 104553 Jun 21  2018 /usr/bin/dash
+==========================================================================================
+Tool: csh
+  Unable to locate (hash): csh
+==========================================================================================
+Tool: sh
+  Path: /usr/bin/sh
+  ls-l: -rwxr-xr-x 1 richmit None 1971272 Oct 30  2018 /usr/bin/sh
+  Ver:  GNU bash, version 4.4.23(1)-release (x86_64-pc-msys)
+  Ver:  Copyright (C) 2016 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+  Ver:  
+  Ver:  This is free software; you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+==========================================================================================
+Tool: vi
+  Unable to locate (hash): vi
+==========================================================================================
+Tool: vim
+  Path: /usr/bin/vim
+  ls-l: -rwxr-xr-x 1 richmit None 2704119 Jul 30 06:28 /usr/bin/vim
+  Ver:  VIM - Vi IMproved 8.1 (2018 May 18, compiled Jul 30 2019 11:28:50)
+  Ver:  Included patches: 1-1777
+  Ver:  Compiled by &lt;alexpux@gmail.com&gt;
+  Ver:  Huge version without GUI.  Features included (+) or not (-):
+  Ver:  +acl               -farsi             -mouse_sysmouse    -tag_any_white
+  Ver:  +arabic            +file_in_path      +mouse_urxvt       -tcl
+  Ver:  +autocmd           +find_in_path      +mouse_xterm       +termguicolors
+  Ver:  +autochdir         +float             +multi_byte        +terminal
+  Ver:  -autoservername    +folding           +multi_lang        +terminfo
+  Ver:  -balloon_eval      -footer            -mzscheme          +termresponse
+  Ver:  +balloon_eval_term +fork()            +netbeans_intg     +textobjects
+  Ver:  -browse            +gettext           +num64             +textprop
+  Ver:  ++builtin_terms    -hangul_input      +packages          +timers
+  Ver:  +byte_offset       +iconv             +path_extra        +title
+  Ver:  +channel           +insert_expand     +perl/dyn          -toolbar
+  Ver:  +cindent           +job               +persistent_undo   +user_commands
+  Ver:  -clientserver      +jumplist          +postscript        +vartabs
+  Ver:  +clipboard         +keymap            +printer           +vertsplit
+  Ver:  +cmdline_compl     +lambda            +profile           +virtualedit
+  Ver:  +cmdline_hist      +langmap           +python/dyn        +visual
+  Ver:  +cmdline_info      +libcall           +python3/dyn       +visualextra
+  Ver:  +comments          +linebreak         +quickfix          +viminfo
+  Ver:  +conceal           +lispindent        +reltime           +vreplace
+  Ver:  +cryptv            +listcmds          +rightleft         +wildignore
+  Ver:  +cscope            +localmap          +ruby/dyn          +wildmenu
+  Ver:  +cursorbind        -lua               +scrollbind        +windows
+  Ver:  +cursorshape       +menu              +signs             +writebackup
+  Ver:  +dialog_con        +mksession         +smartindent       -X11
+  Ver:  +diff              +modify_fname      -sound             -xfontset
+  Ver:  +digraphs          +mouse             +spell             -xim
+  Ver:  -dnd               -mouseshape        +startuptime       -xpm
+  Ver:  -ebcdic            +mouse_dec         +statusline        -xsmp
+  Ver:  +emacs_tags        -mouse_gpm         -sun_workshop      -xterm_clipboard
+  Ver:  +eval              -mouse_jsbterm     +syntax            -xterm_save
+  Ver:  +ex_extra          +mouse_netterm     +tag_binary        
+  Ver:  +extra_search      +mouse_sgr         -tag_old_static    
+  Ver:     system vimrc file: "/etc/vimrc"
+  Ver:       user vimrc file: "$HOME/.vimrc"
+  Ver:   2nd user vimrc file: "~/.vim/vimrc"
+  Ver:        user exrc file: "$HOME/.exrc"
+  Ver:         defaults file: "$VIMRUNTIME/defaults.vim"
+  Ver:    fall-back for $VIM: "/etc"
+  Ver:   f-b for $VIMRUNTIME: "/usr/share/vim/vim81"
+  Ver:  Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H   -I/usr/include/ncursesw  -march=x86-64 -mtune=generic -O2 -pipe -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1       
+  Ver:  Linking: gcc   -L. -pipe -fstack-protector-strong -pipe -Wl,--as-needed -o vim.exe        -lm -lelf    -lncursesw -liconv -lacl -lintl   -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong  -L/usr/lib/perl5/core_perl/CORE -lperl -lpthread -ldl -lcrypt        
+==========================================================================================
+Tool: emacs
+  Path: /home/richmit/bin/emacs
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/emacs
+  Ver:  GNU Emacs 26.2
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+  Ver:  You may redistribute copies of GNU Emacs
+  Ver:  under the terms of the GNU General Public License.
+  Ver:  For more information about these matters, see the file named COPYING.
+==========================================================================================
+Tool: em
+  Path: /home/richmit/bin/em
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/em
+  Ver:  GNU Emacs 26.2
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+  Ver:  You may redistribute copies of GNU Emacs
+  Ver:  under the terms of the GNU General Public License.
+  Ver:  For more information about these matters, see the file named COPYING.
+==========================================================================================
+Tool: ruby
+  Path: /home/richmit/bin/ruby
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Jan  8  2019 /home/richmit/bin/ruby
+  Ver:  ruby 2.6.3p62 (2019-04-16 revision 67580) [x64-mingw32]
+==========================================================================================
+Tool: ruby1.8
+  Unable to locate (hash): ruby1.8
+==========================================================================================
+Tool: ruby2
+  Unable to locate (hash): ruby2
+==========================================================================================
+Tool: python3
+  Path: /home/richmit/bin/python3
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/python3
+  Ver:  Python 3.7.4
+==========================================================================================
+Tool: python2
+  Path: /home/richmit/bin/python2
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/python2
+==========================================================================================
+Tool: perl
+  Path: /home/richmit/bin/perl
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/perl
+  Ver:  
+  Ver:  This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-msys-thread-multi
+  Ver:  
+  Ver:  Copyright 1987-2019, Larry Wall
+  Ver:  
+  Ver:  Perl may be copied only under the terms of either the Artistic License or the
+  Ver:  GNU General Public License, which may be found in the Perl 5 source kit.
+  Ver:  
+  Ver:  Complete documentation for Perl, including FAQ lists, should be found on
+  Ver:  this system using "man perl" or "perldoc perl".  If you have access to the
+  Ver:  Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+  Ver:  
+==========================================================================================
+Tool: gnuplot
+  Path: /mingw64/bin/gnuplot
+  ls-l: -rwxr-xr-x 1 richmit None 1942622 Jul 23  2019 /mingw64/bin/gnuplot
+  Ver:  gnuplot 5.2 patchlevel 7
+==========================================================================================
+Tool: maxima
+  Path: /home/richmit/bin/maxima
+  ls-l: -rwxr-xr-x 1 richmit None 8175 Dec 28  2018 /home/richmit/bin/maxima
+  Ver:  ERROR: Application not found: maxima
+==========================================================================================
+Tool: octave
+  Unable to locate (hash): octave
+==========================================================================================
+Tool: M2
+  Unable to locate (hash): M2
+==========================================================================================
+Tool: gap
+  Unable to locate (hash): gap
+==========================================================================================
+Tool: julia
+  Unable to locate (hash): julia
+==========================================================================================
+Tool: R
+  Unable to locate (hash): R
+==========================================================================================
+Tool: qtiplot
+  Unable to locate (hash): qtiplot
+==========================================================================================
+Tool: ggobi
+  Unable to locate (hash): ggobi
+==========================================================================================
+Tool: povray
+  Unable to locate (hash): povray
+==========================================================================================
+Tool: openscad
+  Unable to locate (hash): openscad
+==========================================================================================
+Tool: xcircuit
+  Unable to locate (hash): xcircuit
+==========================================================================================
+Tool: convert
+  Path: /mingw64/bin/convert
+  ls-l: -rwxr-xr-x 1 richmit None 24367 Jul 12  2019 /mingw64/bin/convert
+  Ver:  Version: ImageMagick 7.0.8-53 Q16 x86_64 2019-07-12 https://imagemagick.org
+  Ver:  Copyright: © 1999-2019 ImageMagick Studio LLC
+  Ver:  License: https://imagemagick.org/script/license.php
+  Ver:  Features: Cipher DPC HDRI Modules OpenCL OpenMP(4.5) 
+  Ver:  Delegates (built-in): bzlib cairo djvu fftw flif fontconfig freetype gslib gvc heic jbig jng jp2 jpeg lcms lqr ltdl lzma openexr pangocairo png ps raqm raw rsvg tiff webp wmf xml zlib
+==========================================================================================
+Tool: pqiv
+  Unable to locate (hash): pqiv
+==========================================================================================
+Tool: import
+  Path: /mingw64/bin/import
+  ls-l: -rwxr-xr-x 1 richmit None 24367 Jul 12  2019 /mingw64/bin/import
+  Ver:  Version: ImageMagick 7.0.8-53 Q16 x86_64 2019-07-12 https://imagemagick.org
+  Ver:  Copyright: © 1999-2019 ImageMagick Studio LLC
+  Ver:  License: https://imagemagick.org/script/license.php
+  Ver:  Features: Cipher DPC HDRI Modules OpenCL OpenMP(4.5) 
+  Ver:  Delegates (built-in): bzlib cairo djvu fftw flif fontconfig freetype gslib gvc heic jbig jng jp2 jpeg lcms lqr ltdl lzma openexr pangocairo png ps raqm raw rsvg tiff webp wmf xml zlib
+  Ver:  Usage: import.exe [options ...] [ file ]
+  Ver:  
+  Ver:  Image Settings:
+  Ver:    -adjoin              join images into a single multi-image file
+  Ver:    -border              include window border in the output image
+  Ver:    -channel type        apply option to select image channels
+  Ver:    -colorspace type     alternate image colorspace
+  Ver:    -comment string      annotate image with comment
+  Ver:    -compress type       type of pixel compression when writing the image
+  Ver:    -define format:option
+  Ver:                         define one or more image format options
+  Ver:    -density geometry    horizontal and vertical density of the image
+  Ver:    -depth value         image depth
+  Ver:    -descend             obtain image by descending window hierarchy
+  Ver:    -display server      X server to contact
+  Ver:    -dispose method      layer disposal method
+  Ver:    -dither method       apply error diffusion to image
+  Ver:    -delay value         display the next image after pausing
+  Ver:    -encipher filename   convert plain pixels to cipher pixels
+  Ver:    -endian type         endianness (MSB or LSB) of the image
+  Ver:    -encoding type       text encoding type
+  Ver:    -filter type         use this filter when resizing an image
+  Ver:    -format "string"     output formatted image characteristics
+  Ver:    -frame               include window manager frame
+  Ver:    -gravity direction   which direction to gravitate towards
+  Ver:    -identify            identify the format and characteristics of the image
+  Ver:    -interlace type      None, Line, Plane, or Partition
+  Ver:    -interpolate method  pixel color interpolation method
+  Ver:    -label string        assign a label to an image
+  Ver:    -limit type value    Area, Disk, Map, or Memory resource limit
+  Ver:    -monitor             monitor progress
+  Ver:    -page geometry       size and location of an image canvas
+  Ver:    -pause seconds       seconds delay between snapshots
+  Ver:    -pointsize value     font point size
+  Ver:    -quality value       JPEG/MIFF/PNG compression level
+  Ver:    -quiet               suppress all warning messages
+  Ver:    -regard-warnings     pay attention to warning messages
+  Ver:    -repage geometry     size and location of an image canvas
+  Ver:    -respect-parentheses settings remain in effect until parenthesis boundary
+  Ver:    -sampling-factor geometry
+  Ver:                         horizontal and vertical sampling factor
+  Ver:    -scene value         image scene number
+  Ver:    -screen              select image from root window
+  Ver:    -seed value          seed a new sequence of pseudo-random numbers
+  Ver:    -set property value  set an image property
+  Ver:    -silent              operate silently, i.e. don't ring any bells 
+  Ver:    -snaps value         number of screen snapshots
+  Ver:    -support factor      resize support: &gt; 1.0 is blurry, &lt; 1.0 is sharp
+  Ver:    -synchronize         synchronize image to storage device
+  Ver:    -taint               declare the image as modified
+  Ver:    -transparent-color color
+  Ver:                         transparent color
+  Ver:    -treedepth value     color tree depth
+  Ver:    -verbose             print detailed information about the image
+  Ver:    -virtual-pixel method
+  Ver:                         Constant, Edge, Mirror, or Tile
+  Ver:    -window id           select window with this id or name
+  Ver:                         root selects whole screen
+  Ver:  
+  Ver:  Image Operators:
+  Ver:    -annotate geometry text
+  Ver:                         annotate the image with text
+  Ver:    -colors value        preferred number of colors in the image
+  Ver:    -crop geometry       preferred size and location of the cropped image
+  Ver:    -encipher filename   convert plain pixels to cipher pixels
+  Ver:    -geometry geometry   preferred size or location of the image
+  Ver:    -help                print program options
+  Ver:    -monochrome          transform image to black and white
+  Ver:    -negate              replace every pixel with its complementary color 
+  Ver:    -quantize colorspace reduce colors in this colorspace
+  Ver:    -resize geometry     resize the image
+  Ver:    -rotate degrees      apply Paeth rotation to the image
+  Ver:    -strip               strip image of all profiles and comments
+  Ver:    -thumbnail geometry  create a thumbnail of the image
+  Ver:    -transparent color   make this color transparent within the image
+  Ver:    -trim                trim image edges
+  Ver:    -type type           image type
+  Ver:  
+  Ver:  Miscellaneous Options:
+  Ver:    -debug events        display copious debugging information
+  Ver:    -help                print program options
+  Ver:    -list type           print a list of supported option arguments
+  Ver:    -log format          format of debugging information
+  Ver:    -version             print version information
+  Ver:  
+  Ver:  By default, 'file' is written in the MIFF image format.  To
+  Ver:  specify a particular image format, precede the filename with an image
+  Ver:  format name and a colon (i.e. ps:image) or specify the image type as
+  Ver:  the filename suffix (i.e. image.ps).  Specify 'file' as '-' for
+  Ver:  standard input or output.
+==========================================================================================
+Tool: display
+  Path: /mingw64/bin/display
+  ls-l: -rwxr-xr-x 1 richmit None 24367 Jul 12  2019 /mingw64/bin/display
+  Ver:  Version: ImageMagick 7.0.8-53 Q16 x86_64 2019-07-12 https://imagemagick.org
+  Ver:  Copyright: © 1999-2019 ImageMagick Studio LLC
+  Ver:  License: https://imagemagick.org/script/license.php
+  Ver:  Features: Cipher DPC HDRI Modules OpenCL OpenMP(4.5) 
+  Ver:  Delegates (built-in): bzlib cairo djvu fftw flif fontconfig freetype gslib gvc heic jbig jng jp2 jpeg lcms lqr ltdl lzma openexr pangocairo png ps raqm raw rsvg tiff webp wmf xml zlib
+  Ver:  Usage: display.exe [options ...] file [ [options ...] file ...]
+  Ver:  
+  Ver:  Image Settings:
+  Ver:    -alpha option        on, activate, off, deactivate, set, opaque, copy
+  Ver:                         transparent, extract, background, or shape
+  Ver:    -antialias           remove pixel-aliasing
+  Ver:    -authenticate password
+  Ver:                         decipher image with this password
+  Ver:    -backdrop            display image centered on a backdrop
+  Ver:    -channel type        apply option to select image channels
+  Ver:    -colormap type       Shared or Private
+  Ver:    -colorspace type     alternate image colorspace
+  Ver:    -comment string      annotate image with comment
+  Ver:    -compress type       type of pixel compression when writing the image
+  Ver:    -define format:option
+  Ver:                         define one or more image format options
+  Ver:    -delay value         display the next image after pausing
+  Ver:    -density geometry    horizontal and vertical density of the image
+  Ver:    -depth value         image depth
+  Ver:    -display server      display image to this X server
+  Ver:    -dispose method      layer disposal method
+  Ver:    -dither method       apply error diffusion to image
+  Ver:    -endian type         endianness (MSB or LSB) of the image
+  Ver:    -filter type         use this filter when resizing an image
+  Ver:    -format string     output formatted image characteristics
+  Ver:    -geometry geometry   preferred size and location of the Image window
+  Ver:    -gravity type        horizontal and vertical backdrop placement
+  Ver:    -identify            identify the format and characteristics of the image
+  Ver:    -immutable           displayed image cannot be modified
+  Ver:    -interlace type      type of image interlacing scheme
+  Ver:    -interpolate method  pixel color interpolation method
+  Ver:    -label string        assign a label to an image
+  Ver:    -limit type value    pixel cache resource limit
+  Ver:    -loop iterations     loop images then exit
+  Ver:    -map type            display image using this Standard Colormap
+  Ver:    -matte               store matte channel if the image has one
+  Ver:    -monitor             monitor progress
+  Ver:    -nostdin             do not try to open stdin
+  Ver:    -page geometry       size and location of an image canvas
+  Ver:    -profile filename    add, delete, or apply an image profile
+  Ver:    -quality value       JPEG/MIFF/PNG compression level
+  Ver:    -quantize colorspace reduce colors in this colorspace
+  Ver:    -quiet               suppress all warning messages
+  Ver:    -regard-warnings     pay attention to warning messages
+  Ver:    -remote command      execute a command in an remote display process
+  Ver:    -repage geometry     size and location of an image canvas (operator)
+  Ver:    -respect-parentheses settings remain in effect until parenthesis boundary
+  Ver:    -sampling-factor geometry
+  Ver:                         horizontal and vertical sampling factor
+  Ver:    -scenes range        image scene range
+  Ver:    -seed value          seed a new sequence of pseudo-random numbers
+  Ver:    -set property value  set an image property
+  Ver:    -size geometry       width and height of image
+  Ver:    -support factor      resize support: &gt; 1.0 is blurry, &lt; 1.0 is sharp
+  Ver:    -texture filename    name of texture to tile onto the image background
+  Ver:    -transparent-color color
+  Ver:                         transparent color
+  Ver:    -treedepth value     color tree depth
+  Ver:    -update seconds      detect when image file is modified and redisplay
+  Ver:    -verbose             print detailed information about the image
+  Ver:    -visual type         display image using this visual type
+  Ver:    -virtual-pixel method
+  Ver:                         virtual pixel access method
+  Ver:    -window id           display image to background of this window
+  Ver:    -window-group id     exit program when this window id is destroyed
+  Ver:    -write filename      write image to a file
+  Ver:  
+  Ver:  Image Operators:
+  Ver:    -auto-orient         automagically orient image
+  Ver:    -border geometry     surround image with a border of color
+  Ver:    -clip                clip along the first path from the 8BIM profile
+  Ver:    -clip-path id        clip along a named path from the 8BIM profile
+  Ver:    -colors value        preferred number of colors in the image
+  Ver:    -contrast            enhance or reduce the image contrast
+  Ver:    -crop geometry       preferred size and location of the cropped image
+  Ver:    -decipher filename   convert cipher pixels to plain pixels
+  Ver:    -deskew threshold    straighten an image
+  Ver:    -despeckle           reduce the speckles within an image
+  Ver:    -edge factor         apply a filter to detect edges in the image
+  Ver:    -enhance             apply a digital filter to enhance a noisy image
+  Ver:    -equalize            perform histogram equalization to an image
+  Ver:    -extract geometry    extract area from image
+  Ver:    -flip                flip image in the vertical direction
+  Ver:    -flop                flop image in the horizontal direction
+  Ver:    -frame geometry      surround image with an ornamental border
+  Ver:    -fuzz distance       colors within this distance are considered equal
+  Ver:    -gamma value         level of gamma correction
+  Ver:    -monochrome          transform image to black and white
+  Ver:    -negate              replace every pixel with its complementary color
+  Ver:    -normalize           transform image to span the full range of colors
+  Ver:    -raise value         lighten/darken image edges to create a 3-D effect
+  Ver:    -resample geometry   change the resolution of an image
+  Ver:    -resize geometry     resize the image
+  Ver:    -roll geometry       roll an image vertically or horizontally
+  Ver:    -rotate degrees      apply Paeth rotation to the image
+  Ver:    -sample geometry     scale image with pixel sampling
+  Ver:    -segment value       segment an image
+  Ver:    -sharpen geometry    sharpen the image
+  Ver:    -strip               strip image of all profiles and comments
+  Ver:    -threshold value     threshold the image
+  Ver:    -thumbnail geometry  create a thumbnail of the image
+  Ver:    -trim                trim image edges
+  Ver:  
+  Ver:  Image Sequence Operators:
+  Ver:    -coalesce            merge a sequence of images
+  Ver:    -flatten             flatten a sequence of images
+  Ver:  
+  Ver:  Miscellaneous Options:
+  Ver:    -debug events        display copious debugging information
+  Ver:    -help                print program options
+  Ver:    -list type           print a list of supported option arguments
+  Ver:    -log format          format of debugging information
+  Ver:    -version             print version information
+  Ver:  
+  Ver:  In addition to those listed above, you can specify these standard X
+  Ver:  resources as command line options:  -background, -bordercolor,
+  Ver:   -mattecolor, -borderwidth, -font, -foreground, -iconGeometry,
+  Ver:  -iconic, -name, -shared-memory, -usePixmap, or -title.
+  Ver:  
+  Ver:  By default, the image format of 'file' is determined by its magic
+  Ver:  number.  To specify a particular image format, precede the filename
+  Ver:  with an image format name and a colon (i.e. ps:image) or specify the
+  Ver:  image type as the filename suffix (i.e. image.ps).  Specify 'file' as
+  Ver:  '-' for standard input or output.
+  Ver:  
+  Ver:  Buttons: 
+  Ver:    1    press to map or unmap the Command widget
+  Ver:    2    press and drag to magnify a region of an image
+  Ver:    3    press to load an image from a visual image directory
+==========================================================================================
+Tool: gs
+  Path: /mingw64/bin/gs
+  ls-l: -rwxr-xr-x 1 richmit None 22447 Jun 10  2019 /mingw64/bin/gs
+  Ver:  9.27
+==========================================================================================
+Tool: pdftex
+  Path: /c/texlive/2018/bin/win32/pdftex
+  ls-l: -rwxr-xr-x 1 richmit None 1536 Dec 28  2018 /c/texlive/2018/bin/win32/pdftex
+  Ver:  pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX)
+  Ver:  kpathsea version 6.3.0
+  Ver:  Copyright 2018 Han The Thanh (pdfTeX) et al.
+  Ver:  There is NO warranty.  Redistribution of this software is
+  Ver:  covered by the terms of both the pdfTeX copyright and
+  Ver:  the Lesser GNU General Public License.
+  Ver:  For more information about these matters, see the file
+  Ver:  named COPYING and the pdfTeX source.
+  Ver:  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+  Ver:  Compiled with libpng 1.6.34; using libpng 1.6.34
+  Ver:  Compiled with zlib 1.2.11; using zlib 1.2.11
+  Ver:  Compiled with xpdf version 4.00
+==========================================================================================
+Tool: pdflatex
+  Path: /c/texlive/2018/bin/win32/pdflatex
+  ls-l: -rwxr-xr-x 1 richmit None 1536 Dec 28  2018 /c/texlive/2018/bin/win32/pdflatex
+  Ver:  pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX)
+  Ver:  kpathsea version 6.3.0
+  Ver:  Copyright 2018 Han The Thanh (pdfTeX) et al.
+  Ver:  There is NO warranty.  Redistribution of this software is
+  Ver:  covered by the terms of both the pdfTeX copyright and
+  Ver:  the Lesser GNU General Public License.
+  Ver:  For more information about these matters, see the file
+  Ver:  named COPYING and the pdfTeX source.
+  Ver:  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+  Ver:  Compiled with libpng 1.6.34; using libpng 1.6.34
+  Ver:  Compiled with zlib 1.2.11; using zlib 1.2.11
+  Ver:  Compiled with xpdf version 4.00
+==========================================================================================
+Tool: tex
+  Path: /c/texlive/2018/bin/win32/tex
+  ls-l: -rwxr-xr-x 1 richmit None 1536 Dec 28  2018 /c/texlive/2018/bin/win32/tex
+  Ver:  TeX 3.14159265 (TeX Live 2018/W32TeX)
+  Ver:  kpathsea version 6.3.0
+  Ver:  Copyright 2018 D.E. Knuth.
+  Ver:  There is NO warranty.  Redistribution of this software is
+  Ver:  covered by the terms of both the TeX copyright and
+  Ver:  the Lesser GNU General Public License.
+  Ver:  For more information about these matters, see the file
+  Ver:  named COPYING and the TeX source.
+  Ver:  Primary author of TeX: D.E. Knuth.
+==========================================================================================
+Tool: latex
+  Path: /c/texlive/2018/bin/win32/latex
+  ls-l: -rwxr-xr-x 1 richmit None 1536 Dec 28  2018 /c/texlive/2018/bin/win32/latex
+  Ver:  pdfTeX 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX)
+  Ver:  kpathsea version 6.3.0
+  Ver:  Copyright 2018 Han The Thanh (pdfTeX) et al.
+  Ver:  There is NO warranty.  Redistribution of this software is
+  Ver:  covered by the terms of both the pdfTeX copyright and
+  Ver:  the Lesser GNU General Public License.
+  Ver:  For more information about these matters, see the file
+  Ver:  named COPYING and the pdfTeX source.
+  Ver:  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+  Ver:  Compiled with libpng 1.6.34; using libpng 1.6.34
+  Ver:  Compiled with zlib 1.2.11; using zlib 1.2.11
+  Ver:  Compiled with xpdf version 4.00
+==========================================================================================
+Tool: dvips
+  Path: /c/texlive/2018/bin/win32/dvips
+  ls-l: -rwxr-xr-x 1 richmit None 161280 Dec 28  2018 /c/texlive/2018/bin/win32/dvips
+  Ver:  This is dvips(k) 5.998 Copyright 2018 Radical Eye Software
+  Ver:  kpathsea version 6.3.0
+  Ver:  Copyright 2018 Radical Eye Software.
+  Ver:  There is NO warranty.  You may redistribute this software
+  Ver:  under the terms of the GNU General Public License
+  Ver:  and the Dvips copyright.
+  Ver:  For more information about these matters, see the files
+  Ver:  named COPYING and dvips.h.
+  Ver:  Primary author of Dvips: T. Rokicki.
+==========================================================================================
+Tool: sbcl
+  Path: /usr/local/bin/sbcl
+  ls-l: lrwxrwxrwx 1 richmit None 55 Dec 28  2018 /usr/local/bin/sbcl -&gt; /c/Program Files/Steel Bank Common Lisp/1.4.14/sbcl.exe
+  Ver:  SBCL 1.4.14
+==========================================================================================
+Tool: clisp
+  Unable to locate (hash): clisp
+==========================================================================================
+Tool: ecl
+  Unable to locate (hash): ecl
+==========================================================================================
+Tool: ccl
+  Unable to locate (hash): ccl
+==========================================================================================
+Tool: diff
+  Path: /usr/bin/diff
+  ls-l: -rwxr-xr-x 1 richmit None 205303 Jan 15  2019 /usr/bin/diff
+  Ver:  diff (GNU diffutils) 3.7
+  Ver:  Copyright (C) 2018 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Paul Eggert, Mike Haertel, David Hayes,
+  Ver:  Richard Stallman, and Len Tower.
+==========================================================================================
+Tool: diff3
+  Path: /usr/bin/diff3
+  ls-l: -rwxr-xr-x 1 richmit None 59809 Jan 15  2019 /usr/bin/diff3
+  Ver:  diff3 (GNU diffutils) 3.7
+  Ver:  Copyright (C) 2018 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Randy Smith.
+==========================================================================================
+Tool: patch
+  Path: /usr/bin/patch
+  ls-l: -rwxr-xr-x 1 richmit None 174011 Feb  9  2018 /usr/bin/patch
+  Ver:  GNU patch 2.7.6
+  Ver:  Copyright (C) 2003, 2009-2012 Free Software Foundation, Inc.
+  Ver:  Copyright (C) 1988 Larry Wall
+  Ver:  
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Larry Wall and Paul Eggert
+==========================================================================================
+Tool: merge
+  Path: /usr/bin/merge
+  ls-l: -rwxr-xr-x 1 richmit None 118470 Jun  1  2017 /usr/bin/merge
+  Ver:  merge (GNU RCS) 5.9.4
+  Ver:  Copyright (C) 2010-2017 Thien-Thi Nguyen
+  Ver:  Copyright (C) 1990-1995 Paul Eggert
+  Ver:  Copyright (C) 1982,1988,1989 Walter F. Tichy, Purdue CS
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+==========================================================================================
+Tool: sqlite3
+  Path: /mingw64/bin/sqlite3
+  ls-l: -rwxr-xr-x 1 richmit None 2070323 Jul 12  2019 /mingw64/bin/sqlite3
+  Ver:  3.29.0 2019-07-10 17:32:03 fc82b73eaac8b36950e527f12c4b5dc1e147e6f4ad2217ae43ad82882a88alt1
+==========================================================================================
+Tool: mysqld
+  Unable to locate (hash): mysqld
+==========================================================================================
+Tool: paraview
+  Unable to locate (hash): paraview
+==========================================================================================
+Tool: visit
+  Unable to locate (hash): visit
+==========================================================================================
+Tool: grass
+  Unable to locate (hash): grass
+==========================================================================================
+Tool: tar
+  Path: /usr/bin/tar
+  ls-l: -rwxr-xr-x 1 richmit None 470130 Feb 28  2019 /usr/bin/tar
+  Ver:  tar (GNU tar) 1.32
+  Ver:  Copyright (C) 2019 Free Software Foundation, Inc.
+  Ver:  License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.
+  Ver:  This is free software: you are free to change and redistribute it.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by John Gilmore and Jay Fenlason.
+==========================================================================================
+Tool: gzip
+  Path: /c/texlive/2018/bin/win32/gzip
+  ls-l: -rwxr-xr-x 1 richmit None 154112 Dec 28  2018 /c/texlive/2018/bin/win32/gzip
+  Ver:  gzip 1.9
+  Ver:  Copyright (C) 2017 Free Software Foundation, Inc.
+  Ver:  Copyright (C) 1993 Jean-loup Gailly.
+  Ver:  This is free software.  You may redistribute copies of it under the terms of
+  Ver:  the GNU General Public License &lt;https://www.gnu.org/licenses/gpl.html&gt;.
+  Ver:  There is NO WARRANTY, to the extent permitted by law.
+  Ver:  
+  Ver:  Written by Jean-loup Gailly.
+==========================================================================================
+Tool: bzip2
+  Path: /mingw64/bin/bzip2
+  ls-l: -rwxr-xr-x 1 richmit None 45901 Jul 15  2019 /mingw64/bin/bzip2
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org32c4ab6" class="outline-2">
+<h2 id="publishing"><span class="section-number-2">10</span> Publishing</h2>
+<div class="outline-text-2" id="text-publishing">
+<p>
+By "publishing" I mean simply copying stuff from the current directory tree to a new location &#x2013; usually one shared by a web/file server or to a staging area
+to be later uploaded to a web server.
+</p>
+
+<p>
+To control very precicely what gets published, put the files in the file <a href="files_to_publish">files_to_publish</a>.  One way to do that is like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #7fffd4;">EXT2PUB</span>=<span style="color: #fa8072;">'.org .html .png .gif .jpeg .pdf .ps .sh .rb .R .c .cpp .h .hpp .csv .csv.gz'</span>
+<span style="color: #00ffff;">if</span> test -e files_to_publish; <span style="color: #00ffff;">then</span> cp files_to_publish files_to_publish_before; wc -l files_to_publish_before; <span style="color: #00ffff;">fi</span>
+<span style="color: #00ffff;">for</span> e<span style="color: #00ffff;"> in</span> $<span style="color: #7fffd4;">EXT2PUB</span>; <span style="color: #00ffff;">do</span>
+  find ./ -name <span style="color: #fa8072;">"*$e"</span>
+<span style="color: #00ffff;">done</span> | sed <span style="color: #fa8072;">'s/^\.\///'</span> | egrep -v <span style="color: #fa8072;">'^(#|\.)'</span> &gt; files_to_publish
+sort files_to_publish | uniq &gt; files_to_publish~
+mv files_to_publish~ files_to_publish
+wc -l files_to_publish
+</pre>
+</div>
+
+<pre class="example">
+11 files_to_publish_before
+10 files_to_publish
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #7fffd4;">PUB_DIR</span>=/tmp/foo
+<span style="color: #7fffd4;">HTML_NAME</span>=
+<span style="color: #7fffd4;">PUB_MODES</span>=a+rX
+<span style="color: #7fffd4;">VERBOSE</span>=-ii
+<span style="color: #00ffff;">if</span> test -z <span style="color: #fa8072;">"$HTML_NAME"</span> -o 0 -eq <span style="color: #bf3eff; font-weight: bold;">`find ./ -cnewer "$HTML_NAME" -a -type f 2&gt;/dev/null | wc -l `</span>; <span style="color: #00ffff;">then</span>
+    <span style="color: #7fffd4;">RSYNC_OPTS</span>=<span style="color: #fa8072;">'--delete -a'</span>
+    <span style="color: #00ffff;">if</span> test -n <span style="color: #fa8072;">"$VERBOSE"</span>;         <span style="color: #00ffff;">then</span> <span style="color: #7fffd4;">RSYNC_OPTS</span>=<span style="color: #fa8072;">"$RSYNC_OPTS $VERBOSE"</span>; <span style="color: #00ffff;">fi</span>
+    <span style="color: #00ffff;">if</span> test -e <span style="color: #fa8072;">'.rsync-filter'</span>;    <span style="color: #00ffff;">then</span> <span style="color: #7fffd4;">RSYNC_OPTS</span>=<span style="color: #fa8072;">"$RSYNC_OPTS -F"</span>; <span style="color: #00ffff;">fi</span>
+    <span style="color: #00ffff;">if</span> test -e <span style="color: #fa8072;">'files_to_publish'</span>; <span style="color: #00ffff;">then</span> <span style="color: #7fffd4;">RSYNC_OPTS</span>=<span style="color: #fa8072;">"$RSYNC_OPTS --files-from=files_to_publish"</span>; <span style="color: #00ffff;">fi</span>
+    date
+    rsync $<span style="color: #7fffd4;">RSYNC_OPTS</span> ./ <span style="color: #fa8072;">"$PUB_DIR"</span>
+    date
+<span style="color: #00ffff;">else</span>
+  <span style="color: #b0c4de;">echo</span> <span style="color: #fa8072;">"ERROR: $HTML_NAME is not the newest file here.  Please regenerate it (C-c C-e h h)!"</span>
+<span style="color: #00ffff;">fi</span>
+</pre>
+</div>
+
+<pre class="example">
+ERROR: genericOrgTemplate.html is not the newest file here.  Please regenerate it (C-c C-e h h)!
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc8e75d3" class="outline-2">
+<h2 id="orgc8e75d3"><span class="section-number-2">11</span> EOF</h2>
+<div class="outline-text-2" id="text-11">
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+Created by Mitch Richling <<a href="mailto:http://www.mitchr.me/">http://www.mitchr.me/</a>>.  Rendered on 2020-01-31 Fri 22:00 via <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.2 (<a href="https://orgmode.org">Org</a> mode 9.3.1)
+</div>
+</body>
+</html>

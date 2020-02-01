@@ -1,0 +1,61 @@
+# -*- Mode:Org; Coding:utf-8; fill-column:158 -*-
+#+TITLE:       TODO LIST
+#+AUTHOR:      Mitch Richling
+#+EMAIL:       http://www.mitchr.me/
+#+DESCRIPTION: Template for a generic TODO list
+#+KEYWORDS:    some keywords
+#+LANGUAGE:    en
+#+OPTIONS:     num:t toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t skip:nil d:nil todo:t pri:nil H:5 p:t author:t html-scripts:nil 
+#+SEQ_TODO:    TODO:NEW(t) TODO:WORK(w) TODO:HOLD(h) | TODO:FUTURE(f) TODO:DONE(d) TODO:CANCELED(c)
+
+# KEY BINDINGS:
+#  * C-c C-t     -- new todo
+#  * C-c C-s     -- add schedule time
+#  * C-c C-d     -- add deadline time
+#  * S-<UP>      -- set higher priority
+#  * S-<DOWN>    -- set lower priority
+#  * C-c a       -- agenda
+#  * C-c C-x C-i -- Start the clock on the current item (clock-in). 
+#  * C-c C-x C-o -- Stop the clock (clock-out)
+#  * C-c C-x C-d -- Display clock info for all items
+#  * C-c C-c     -- Update dynamic block at point -- cursor must be on #+BEGIN line
+#  * C-c C-x C-e -- Update an effort estimate
+#  * C-c C-x e   -- Set the effort estimate for the current entry. 
+#  * C-c C-x C-r -- Insert a dynamic block at point
+
+#+BEGIN: clocktable :maxlevel 2 :scope file
+#+CAPTION: Clock summary at [2016-02-06 Sat 00:12]
+| Headline                                |   Time |
+|-----------------------------------------+--------|
+| *Total time*                            | *0:12* |
+|-----------------------------------------+--------|
+| TODO:NEW This is an action item --...   |   0:01 |
+| TODO:NEW [#B] Here is an action item... |   0:11 |
+#+END:
+
+
+* TODO:NEW This is an action item -- work speak. ;)
+  SCHEDULED: <2016-02-05 Fri> DEADLINE: <2016-02-05 Fri>
+  :LOGBOOK:  
+  CLOCK: [2016-02-05 Fri 23:58]--[2016-02-05 Fri 23:59] =>  0:01
+  :END:      
+
+* TODO:NEW This is an item with sub-items [1/2]
+** TODO:NEW A sub-item
+** TODO:DONE Another sub-item
+   CLOSED: [2016-02-05 Fri 23:30]
+   :LOGBOOK:  
+   - State "TODO:DONE"  from "TODO:NEW"   [2016-02-05 Fri 23:30]
+   :END:      
+      
+* TODO:NEW [#B] Here is an action item with list components [2/3]
+  :LOGBOOK:  
+  CLOCK: [2016-02-06 Sat 00:01]--[2016-02-06 Sat 00:12] =>  0:11
+  :END:      
+  - [ ] Step 1
+  - [X] Step 2
+  - [X] Step 3
+
+
+
+
