@@ -23,6 +23,8 @@
 #+HTML_HEAD: <style>.org-src-container>pre { line-height: 1.2em; padding-top: 1.5em; margin: 0.5em; background-color: #404040; color: white; overflow: auto; }</style>
 #+HTML_HEAD: <style>.org-src-container>pre:before { display: block; position: absolute; background-color: #b3b3b3; top: 0; right: 0; padding: 0 0.2em 0 0.4em; border-bottom-left-radius: 8px; border: 0; color: white; font-size: 100%; font-family: Helvetica, sans-serif;}</style>
 #+HTML_HEAD: <style>pre.example { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; font-family: Lucida Console, monospace; font-size: 80%; background: #404040; color: white; display: block; padding: 0em; border: 2px solid black; }</style>
+#+HTML_LINK_HOME: https://www.mitchr.me/
+#+HTML_LINK_UP: https://www.mitchr.me/FIXME
 
 #+ATTR_HTML: :border 2 solid #ccc :frame hsides :align center
 |        <r> | <l>              |
@@ -218,7 +220,7 @@ the link has a 'display text' component.
 
 The conversion was done like so:
 
-#+BEGIN_SRC sh  :exports code
+#+BEGIN_SRC sh :exports code 
 convert -density 600 -resize 1024 -background white -flatten example.pdf example.png
 #+END_SRC
 
@@ -238,7 +240,7 @@ Here is a number, src_elisp{(* 2 3)} =6=, that comes from a bit of elisp code.
 
 Text code blocks can be used as a kind of verbatum environment instead of BEGIN_EXAMPLE.
 
-#+BEGIN_SRC text :exports code
+#+BEGIN_SRC text :exports code :eval never
 > Some Mail
 >> Some More
 >>> Even More
@@ -260,15 +262,20 @@ This is nice because we get some highlighting for quoted e-mails and threads.
 
 While you can use "value" insead of "output" for code blocks, it really is *very* usefull for Emacs Lisp.
 
-#+BEGIN_SRC emacs-lisp :results value verbatim :exports both
+#+BEGIN_SRC emacs-lisp :results value code :exports both
 (+ 1 2 3 5)
 #+END_SRC
+
+#+RESULTS:
+#+begin_src emacs-lisp
+11
+#+end_src
 
 ** Emacs Calc
 
 For more complex mathematical computations done with just Emacs (no outside tools) we can use calc.
 
-#+BEGIN_SRC calc :results output verbatim :exports both
+#+BEGIN_SRC calc :results output verbatum :exports both
 deriv(3*x^2+log(x), x)
 #+END_SRC
 
@@ -305,6 +312,11 @@ d:diff(3*x^2+log(x), x);
 print(d);
 #+END_SRC
 
+#+RESULTS:
+#+begin_example
+6*x+1/x 
+#+end_example
+
 Lastly note we can also output things in LaTeX, and get them rendered on export!
 
 #+BEGIN_SRC maxima :results output verbatim raw :exports both
@@ -326,7 +338,7 @@ date "+%Y-%m-%d %H:%M:%S"
 
 #+RESULTS:
 #+begin_example
-2020-01-22 15:08:04
+2020-07-21 16:27:29
 #+end_example
 
 ** Ruby
@@ -335,10 +347,55 @@ date "+%Y-%m-%d %H:%M:%S"
 puts("HI MOM")
 #+END_SRC
 
+#+RESULTS:
+#+begin_example
+HI MOM
+#+end_example
+
 ** Perl
 
 #+BEGIN_SRC perl :exports both :results output verbatim
 print "HI MOM\n";
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+HI MOM
+#+end_example
+
+* Fancy Code Block Stuff
+** Generateing code
+
+#+BEGIN_SRC elisp :results output verbatum :wrap src sh
+(cl-loop for f in '("foo" "bar")
+         do (princ (message "mv %s %s.bak\n" f f)))
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+mv foo foo.bak
+mv bar bar.bak
+#+end_src
+
+** Code links
+
+You can link to a target inside a code block: [[(foo)][Visible Link Text]]
+
+#+BEGIN_SRC elisp :results output verbatum :wrap src sh
+(cl-loop for f in '("foo" "bar")                       ;; (ref:foo)
+         do (princ (message "mv %s %s.bak\n" f f)))
+#+END_SRC
+
+You can remove the visable refrences from the source listings with the -r option in the babel header.  Otherwise they will appear in the listing -- fontlocked
+white.
+
+** Line Numbers
+
+This will include line numbers in the block when exported
+
+#+BEGIN_SRC elisp :results output verbatum -l
+(cl-loop for f in '("foo" "bar")
+         do (princ (message "mv %s %s.bak\n" f f)))
 #+END_SRC
 
 * dot
@@ -362,6 +419,11 @@ graph {
 print("HI MOM")
 #+END_SRC
 
+#+RESULTS:
+#+begin_example
+[1] "HI MOM"
+#+end_example
+
 ** Access a table in this document as a data.frame
 
 #+begin_src R :exports both :results output verbatim :var someData=a-table-name
@@ -370,7 +432,11 @@ someData
 
 #+RESULTS:
 #+begin_example
-[1] "factor"
+  factor.1 factor.2 value.1 value.2
+1        a        z       1       5
+2        a        x       2       6
+3        a        y       3       7
+4        b        x       4      NA
 #+end_example
 
 ** Output from R as a org-mode table
@@ -393,17 +459,17 @@ print(someData)
 
 #+RESULTS:
 #+begin_example
-    a           b
-1   1 -1.48729577
-2   2 -0.07218193
-3   3 -0.29358047
-4   4  0.62614601
-5   5 -0.02800536
-6   6  0.43488620
-7   7  0.16883341
-8   8  1.81872302
-9   9  1.28414530
-10 10 -0.78237244
+    a          b
+1   1  1.2417875
+2   2  0.8637138
+3   3 -1.9440137
+4   4 -0.3236072
+5   5 -1.3049771
+6   6 -1.3039629
+7   7 -0.5288673
+8   8  0.7139287
+9   9  1.1919474
+10 10  0.6513476
 #+end_example
 
 ** Use the someData variable in the session, and draw a graph.  
@@ -433,6 +499,25 @@ ggplot(someData, aes(x=a, y=b)) + geom_line()
 #+RESULTS:
 
 [[file:rOut1.png]]
+
+** And plotly works too
+
+Note the silent output -- we don't need the result, so we just don't print it.
+
+#+begin_src R :session :results silent
+library(plotly)
+library(htmlwidgets)
+data(diamonds, package = "ggplot2")
+ggp <- ggplot(diamonds, aes(x = log(carat), y = log(price))) + geom_hex(bins = 100)
+plp <- ggplotly(ggp)
+saveWidget(plp, "examplePlotly.html", selfcontained=FALSE, libdir="examplePlotlyLib")
+#+end_src
+
+#+BEGIN_EXPORT html
+<br>
+<p align="center"><iframe id="igraph" scrolling="no" style="border:none;"seamless="seamless" src="examplePlotly.html" height="600" width="800"></iframe></p>
+<br>
+#+END_EXPORT
 
 * Reproduciblity
 
@@ -1564,7 +1649,6 @@ Tool: bzip2
   Path: /mingw64/bin/bzip2
   ls-l: -rwxr-xr-x 1 richmit None 45901 Jul 15  2019 /mingw64/bin/bzip2
 #+end_example
-
 
 * Publishing 
 :PROPERTIES:
