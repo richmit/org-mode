@@ -37,11 +37,11 @@ Copyright {{{time(%Y)}}} Mitch Richling. All rights reserved.
 #+TOC: headlines 5
 
 
-#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
-#   00   #    10   #    20   #    30   #    40   #    50   #    60   #    70   #    80   #    90   #   100   #   110   #   120   #   130   #   140   #   150   #   160   #
-# 234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
-#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
-#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#    010  #    020  #    030  #    040  #    050  #    060  #    070  #    080  #    090  #    100  #    110  #    120  #    130  #    140  #    150  #    160  #    170  #    180  #    190  #    200  #    210  #    220  #    230  #    240  #    250  #    260  #    270  #    280  #    290  #    300  #    310  #    320  #
+# 2345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
 
 # To get org to evaluate all code blocks on export, add the following to the Emacs header on the first line of this file:
 #     org-export-babel-evaluate:t; org-confirm-babel-evaluate:nil
@@ -105,23 +105,28 @@ Note that
 
 *** Tables
 
-**** With formatting
+**** With formatting & a formula
 
-|---------+-------+------------+------------|
-|         |       |      <r10> | <l10>      |
-| /       | <>    |            |            |
-| col 1   | col 2 |      col 3 | Col 4      |
-|---------+-------+------------+------------|
-| another | bit   |          1 | 2          |
-| a       | b     |          2 | 1          |
-|---------+-------+------------+------------|
+#+CAPTION: A formatted table
+#+ATTR_HTML: :align center
+|---------+-------+-------+-------|
+|         |       | <r10> | <l10> |
+| /       | <>    |       |       |
+| col 1   | col 2 | col 3 | Col 4 |
+|---------+-------+-------+-------|
+| another | bit   |     1 | 1.00  |
+| a       | b     |     2 | 4.00  |
+|---------+-------+-------+-------|
+#+TBLFM: @4$4..@>$4=$3*$3;%.2f
 
 **** Tables used to hold data
 
-Notes:
+We can use tables to hold data for other blocks to read in the document.  The
+section [[Access a table in this document as a data.frame]] shows how to access
+the table below from R.  Note some specifics for R:
    - We have no "top line" on the table -- otherwise the row of titles is not recognized!! 
-   - Spaces in column titles are transformed into periods for data.frame column names.
-   - Empty data cells will be NA in the data.frame
+   - Spaces in column titles are transformed into periods for =data.frame= column names.
+   - Empty data cells will be =NA= in the =data.frame=
    - Non-numeric columns will be "characters" not "factors"
 
 #+TBLNAME:a-table-name
@@ -203,20 +208,29 @@ A bit of both:
 
 In this Section you will see one image.  A PNG for HTML, and a PDF for LaTeX!
 
- #+BEGIN_HTML
+#+BEGIN_EXPORT html
 <div class="figure">
  <p>
    <img src="example.png" alt="example.png" />
  </p>
 </div>
-     #+END_HTML
+#+END_EXPORT
 
-#+LATEX: \includegraphics[width=4in]{example.pdf}
+# One liners can be included like this:
+# @@html:<b>@@bold text@@html:</b>@@
+
+#+BEGIN_EXPORT latex
+\includegraphics[width=4in]{example.pdf}
+#+END_EXPORT
+
+# One liners can be included like this:
+# #+LATEX: 
 
 ** Links to images and converting PDFs to high quality raster images
 
 Here we have a pretty graph (in a PNG file):
 
+#+ATTR_HTML: :width 1024 :align center
 [[file:example.png]]
 
 The above file was generated from a high quality PDF file: [[file:example.pdf][example.pdf]]. Note that the link in the previous sentence is a link in both HTML and LaTeX because
@@ -285,14 +299,14 @@ tangle.  When evaluating an entire document this can be used to advantage to seq
 
 For more complex mathematical computations done with just Emacs (no outside tools) we can use calc.
 
-#+BEGIN_SRC calc :results output verbatum :exports both :wrap "src text :eval never :tangle no"
+#+BEGIN_SRC calc :results output verbatum :exports both
 deriv(3*x^2+log(x), x)
 #+END_SRC
 
 #+RESULTS:
-#+begin_src text :eval never :tangle no
+#+begin_example
 6 x + 1 / x
-#+end_src
+#+end_example
 
 ** Maxima
 
@@ -300,22 +314,22 @@ For super complex math, we can use maxima.
 
 Here we see a  pretty printed result
 
-#+BEGIN_SRC maxima :results output verbatim :exports both :wrap "src text :eval never :tangle no"
+#+BEGIN_SRC maxima :results output verbatim :exports both
 programmode:false;
 d:diff(3*x^2+log(x), x);
 print(d);
 #+END_SRC
 
 #+RESULTS:
-#+begin_src text :eval never :tangle no
+#+begin_example
       1
 6 x + - 
       x
-#+end_src
+#+end_example
 
 Same answer, but 2D printed
 
-#+BEGIN_SRC maxima :results output verbatim :exports both :wrap "src text :eval never :tangle no"
+#+BEGIN_SRC maxima :results output verbatim :exports both
 programmode:false;
 display2d:false;
 d:diff(3*x^2+log(x), x);
@@ -323,9 +337,9 @@ print(d);
 #+END_SRC
 
 #+RESULTS:
-#+begin_src text :eval never :tangle no
+#+begin_example
 6*x+1/x 
-#+end_src
+#+end_example
 
 We can also output things in LaTeX so that the result is typeset on export!
 
@@ -366,18 +380,18 @@ fortran(d);
 
 ** Shells
 
-#+BEGIN_SRC sh :results output verbatim :exports both :wrap "src text :eval never :tangle no"
+#+BEGIN_SRC sh :results output verbatim :exports both
 date "+%Y-%m-%d %H:%M:%S"
 #+END_SRC
 
 #+RESULTS:
 #+begin_example
-2020-07-21 16:27:29
+2022-05-08 13:12:40
 #+end_example
 
 ** Ruby
 
-#+BEGIN_SRC ruby :exports both :results output verbatim :wrap "src text :eval never :tangle no"
+#+BEGIN_SRC ruby :exports both :results output verbatim
 puts("HI MOM")
 #+END_SRC
 
@@ -391,7 +405,7 @@ HI MOM
 
 #+BEGIN_SRC elisp :results output verbatum :wrap src bash :wrap "src sh :eval never :tangle no"
 (cl-loop for f in '("foo" "bar")
-         do (princ (message "mv \"%s\" \"%s.bak\" # Rename %s\n" f f f)))
+         do (princ (format "mv \"%s\" \"%s.bak\" # Rename %s\n" f f f)))
 #+END_SRC
 
 #+RESULTS:
@@ -400,13 +414,16 @@ mv "foo" "foo.bak" # Rename foo
 mv "bar" "bar.bak" # Rename bar
 #+end_src
 
-** Code links
+** Code links & Suppress Output
 
 You can link to a target inside a code block: [[(foo)][Visible Link Text]]
 
+In the following example we also suppress output with the =silent= option to =:results=.  The code still runs when executed, but the output is not placed in
+the buffer.
+
 #+BEGIN_SRC elisp :results silent :exports code
 (cl-loop for f in '("foo" "bar")                       ;; (ref:foo)
-         do (princ (message "mv %s %s.bak\n" f f)))
+         do (message "This will appear in the Emacs *Messages* buffer: %s!!" f))
 #+END_SRC
 
 You can remove the visable refrences from the source listings with the -r option in the babel header.  Otherwise they will appear in the listing -- fontlocked
@@ -427,6 +444,7 @@ mv a a.bak
 mv b b.bak
 mv c c.bak
 #+end_src
+
 
 * dot
 
@@ -769,12 +787,4 @@ To control very precicely what gets published, put the files in the file file:fi
     echo "ERROR: $HTML_NAME is not the newest file here.  Please regenerate it (C-c C-e h h)!"
   fi
 #+end_src
-
-
-# #+begin_src latex :file latex-logo.pdf
-#   \LaTeX
-# #+end_src
-
-# #+results:
-# [[file:latex-logo.pdf]]
 
