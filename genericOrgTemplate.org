@@ -1,4 +1,6 @@
 # -*- Mode:Org; Coding:utf-8; fill-column:158 -*-
+# ######################################################################################################################################################.H.S.##
+# FILE:        FILENAME
 #+TITLE:       TITLE FIXME
 #+AUTHOR:      Mitch Richling
 #+EMAIL:       http://www.mitchr.me/
@@ -13,6 +15,7 @@
 # #+SEQ_TODO:    ACTION:NEW(t!) ACTION:ASSIGNED(a!@) ACTION:WORK(w!) ACTION:HOLD(h@) | ACTION:FUTURE(f) ACTION:DONE(d!) ACTION:CANCELED(c!)
 # #+SEQ_TODO:    TODO:NEW(T!)                        TODO:WORK(W!)   TODO:HOLD(H@)   |                  TODO:DONE(D!)   TODO:CANCELED(C!)
 #+SEQ_TODO:    TODO:NEW(t)                         TODO:WORK(w)    TODO:HOLD(h)    | TODO:FUTURE(f)   TODO:DONE(d)    TODO:CANCELED(c)
+#+PROPERTY: header-args :eval never-export
 #+HTML_HEAD: <style>body { width: 95%; margin: 2% auto; font-size: 18px; line-height: 1.4em; font-family: Georgia, serif; color: black; background-color: white; }</style>
 #+HTML_HEAD: <style>body { min-width: 500px; max-width: 1024px; }</style>
 #+HTML_HEAD: <style>h1,h2,h3,h4,h5,h6 { color: #A5573E; line-height: 1em; font-family: Helvetica, sans-serif; }</style>
@@ -25,6 +28,7 @@
 #+HTML_HEAD: <style>pre.example { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; font-family: Lucida Console, monospace; font-size: 80%; background: #404040; color: white; display: block; padding: 0em; border: 2px solid black; }</style>
 #+HTML_LINK_HOME: https://www.mitchr.me/
 #+HTML_LINK_UP: https://www.mitchr.me/FIXME
+# ######################################################################################################################################################.H.E.##
 
 #+ATTR_HTML: :border 2 solid #ccc :frame hsides :align center
 |          <r> | <l>                                          |
@@ -32,16 +36,16 @@
 |   *Updated:* | /{{{modification-time(%Y-%m-%d %H:%M:%S)}}}/ |
 | *Generated:* | /{{{time(%Y-%m-%d %H:%M:%S)}}}/              |
 #+ATTR_HTML: :align center
-Copyright {{{time(%Y)}}} Mitch Richling. All rights reserved.
+Copyright \copy {{{time(%Y)}}} Mitch Richling. All rights reserved.
 
 #+TOC: headlines 5
 
-
-#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
-#    010  #    020  #    030  #    040  #    050  #    060  #    070  #    080  #    090  #    100  #    110  #    120  #    130  #    140  #    150  #    160  #    170  #    180  #    190  #    200  #    210  #    220  #    230  #    240  #    250  #    260  #    270  #    280  #    290  #    300  #    310  #    320  #
-# 2345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
-#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
-#         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#   010  #    020  #    030  #    040  #    050  #    060  #    070  #    080  #    090  #    100  #    110  #    120  #    130  #    140  #    150  #    160  #    170  #    180  #    190  #    200  #    210  #    220  #    230  #    240  #    250  #    260  #    270  #    280  #    290  #
+# 345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #       | #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #       | #         #         #         #         #         #         #         #         #         #         #         #         #         #
 
 # To get org to evaluate all code blocks on export, add the following to the Emacs header on the first line of this file:
 #     org-export-babel-evaluate:t; org-confirm-babel-evaluate:nil
@@ -788,3 +792,33 @@ To control very precicely what gets published, put the files in the file file:fi
   fi
 #+end_src
 
+* Update my Templates
+
+#+begin_src sh :exports both :results output verbatim
+if [ -e ~/core/org-mode/genericOrgTemplate.org -a -d ~/core/codeBits/templates ]; then
+  echo "BEFORE"
+  md5sum ~/core/org-mode/genericOrgTemplate.org
+  ls -l ~/core/codeBits/templates/*.org
+  md5sum ~/core/codeBits/templates/*.org
+  grep -E -m 1 -B 100 '^ *$' ~/core/org-mode/genericOrgTemplate.org | head -n -1 > ~/core/codeBits/templates/top.org
+  cp ~/core/org-mode/genericOrgTemplate.org ~/core/codeBits/templates/template.org
+  echo "AFTER"
+  ls -l ~/core/codeBits/templates/*.org
+  md5sum ~/core/codeBits/templates/*.org
+fi
+#+end_src
+
+#+RESULTS:
+#+begin_example
+BEFORE
+e644ceffdbd721e801a48969c5edf922 */home/richmit/core/org-mode/genericOrgTemplate.org
+-rw-r--r-- 1 richmit None 27294 Jun  2 18:21 /home/richmit/core/codeBits/templates/template.org
+-rw-r--r-- 1 richmit None  2580 Jun  2 18:25 /home/richmit/core/codeBits/templates/top.org
+24d2543427322e69f7d9f019adcebf81 */home/richmit/core/codeBits/templates/template.org
+08ea44e506e0d887c1ee9182e8a41ccf */home/richmit/core/codeBits/templates/top.org
+AFTER
+-rw-r--r-- 1 richmit None 28756 Jun  2 18:26 /home/richmit/core/codeBits/templates/template.org
+-rw-r--r-- 1 richmit None  2580 Jun  2 18:26 /home/richmit/core/codeBits/templates/top.org
+e644ceffdbd721e801a48969c5edf922 */home/richmit/core/codeBits/templates/template.org
+08ea44e506e0d887c1ee9182e8a41ccf */home/richmit/core/codeBits/templates/top.org
+#+end_example
