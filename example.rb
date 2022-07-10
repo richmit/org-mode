@@ -1,17 +1,20 @@
-#!/usr/local/bin/ruby
-
+#!/usr/bin/env -S ruby
+# -*- Mode:ruby-mode; Coding:us-ascii-unix; fill-column:158 -*-
+#########################################################################################################################################################.H.S.##
 ##
-# @file      hello.rb
-# @author    Mitch Richling <http://www.mitchr.me/>
-# @Copyright Copyright 2006 by Mitch Richling.  All rights reserved.
+# @file      example.rb
+# @author    Mitch Richling http://www.mitchr.me/
 # @brief     The classic hello world program the Ruby way.@EOL
-# @Keywords  ruby example hello world
-# @Std       Ruby 1.8
+# @keywords  ruby example hello world
+# @std       Ruby 1.8
+# @Copyright Copyright 2006 by Mitch Richling.  All rights reserved.
+# @filedetails
 #
-#            The methods puts, print, printf & putc are all in the IO
-#            class as well so that they can be used to write to
-#            different IO streams.  As used here, they write to
-#            STDOUT.
+#  The methods puts, print, printf & putc are all in the IO class as
+#  well so that they can be used to write to different IO streams.  As
+#  used here, they write to STDOUT.
+#
+#########################################################################################################################################################.H.E.##
 
 puts("Hello, World!")
 
