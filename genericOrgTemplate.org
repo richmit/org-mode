@@ -266,7 +266,11 @@ Some Ruby code is the file file:example.rb.  It's contents are listed below:
 We can include just the stuff after the top comment like this:
 
 #+begin_src sh :results output verbatum :exports results :wrap "src ruby :eval never :tangle no"
-sed -n '/H\.E\./,$p' example.rb | tail -n +2 | grep -v '.##########################################'
+sed -En '/(!|#|\*|=|_|-|%|;|C|\/){70,}\.H\.E\./,$p' example.rb | grep -vE '.(!|#|\*|=|_|-|%|;|C|/){70,}'
+#+end_src
+
+#+begin_src sh :results output verbatum :exports results :wrap "src ruby :eval never :tangle no"
+grep -EA 10000 '(!|#|\*|=|_|-|%|;|C|/){70,}\.H\.E\.' example.rb | grep -vE '(!|#|\*|=|_|-|%|;|C|/){70,}'
 #+end_src
 
 #+RESULTS:
