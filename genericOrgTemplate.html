@@ -3,9 +3,9 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-08-01 Tue 12:19 -->
+<!-- 2024-12-31 Tue 12:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=2024, initial-scale=1" />
+<meta name="viewport" content="width=1024, initial-scale=1" />
 <title>TITLE FIXME</title>
 <meta name="author" content="GIT-NAME" />
 <meta name="description" content="DESCRIPTION FIXME" />
@@ -207,28 +207,39 @@
 <style>.org-src-container>pre:before { display: block; position: absolute; background-color: #b3b3b3; top: 0; right: 0; padding: 0 0.2em 0 0.4em; border-bottom-left-radius: 8px; border: 0; color: white; font-size: 100%; font-family: Helvetica, sans-serif;}</style>
 <style>pre.example { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; font-family: Lucida Console, monospace; font-size: 80%; background: #404040; color: white; display: block; padding: 0em; border: 2px solid black; }</style>
 <style>blockquote { margin-bottom: 0.5em; padding: 0.5em; background-color: #FFF8DC; border-left: 2px solid #A5573E; border-left-color: rgb(255, 228, 102); display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 5em; margin-inline-end: 5em; } </style>
-<style>#content { max-width: 70em; margin: auto; }</style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<style>#content { max-width: 60em; }</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -256,17 +267,17 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2023-08-01 12:19:45</i></td>
+<td class="org-left"><i>2024-12-31 12:07:50</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2023-08-01 12:19:52</i></td>
+<td class="org-left"><i>2024-12-31 12:08:11</i></td>
 </tr>
 </tbody>
 </table>
 <p align="center">
-Copyright &copy; 2023 Mitch Richling. All rights reserved.
+Copyright &copy; 2024 Mitch Richling. All rights reserved.
 </p>
 
 <div id="table-of-contents" role="doc-toc">
@@ -274,100 +285,101 @@ Copyright &copy; 2023 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org8e7bc29">2. Math</a></li>
-<li><a href="#org066f937">3. Markup</a>
+<li><a href="#org5fe09cd">2. Math</a></li>
+<li><a href="#org7443b03">3. Markup</a>
 <ul>
-<li><a href="#orgcb6bba2">3.1. Inline stuff</a></li>
-<li><a href="#org889a827">3.2. Structural stuff</a>
+<li><a href="#orgcf56872">3.1. Inline stuff</a></li>
+<li><a href="#orgd5f48d2">3.2. Structural stuff</a>
 <ul>
-<li><a href="#org45636e4">3.2.1. Special Paragraphs</a></li>
-<li><a href="#org08beb29">3.2.2. Tables</a>
+<li><a href="#org5d92c2e">3.2.1. Special Paragraphs</a></li>
+<li><a href="#org18f6fcc">3.2.2. Tables</a>
 <ul>
-<li><a href="#orge3272d5">3.2.2.1. With formatting &amp; a formula</a></li>
-<li><a href="#org4cf0455">3.2.2.2. Tables used to hold data</a></li>
+<li><a href="#org9a18f32">3.2.2.1. With formatting &amp; a formula</a></li>
+<li><a href="#org6883fd7">3.2.2.2. Tables used to hold data</a></li>
 </ul>
 </li>
-<li><a href="#orgd9bbf11">3.2.3. Lists</a></li>
+<li><a href="#org83f55f8">3.2.3. Lists</a></li>
 </ul>
 </li>
-<li><a href="#orga66fdc0">3.3. Todo/action items</a>
+<li><a href="#org51a7f43">3.3. Todo/action items</a>
 <ul>
-<li><a href="#orgf3d479f">3.3.1. <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</a></li>
-<li><a href="#org3bf04da">3.3.2. ACTION:DONE This is an action item &#x2013; work speak. ;)</a></li>
-<li><a href="#org245970d">3.3.3. ACTION:NEW This is an item with sub-items <code>[1/2]</code></a>
+<li><a href="#org4913048">3.3.1. <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</a></li>
+<li><a href="#org17c8bf0">3.3.2. ACTION:DONE This is an action item &#x2013; work speak. ;)</a></li>
+<li><a href="#org8f8e0b0">3.3.3. ACTION:NEW This is an item with sub-items <code>[1/2]</code></a>
 <ul>
-<li><a href="#org73a9c1c">3.3.3.1. ACTION:DONE A subitem</a></li>
-<li><a href="#org3d95d1e">3.3.3.2. ACTION:NEW Another subitem</a></li>
+<li><a href="#orga637860">3.3.3.1. ACTION:DONE A subitem</a></li>
+<li><a href="#org27d41d3">3.3.3.2. ACTION:NEW Another subitem</a></li>
 </ul>
 </li>
-<li><a href="#org0934180">3.3.4. ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></a></li>
+<li><a href="#org8d16b6c">3.3.4. ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org6624583">4. Images</a>
+<li><a href="#org1a3487e">4. Images</a>
 <ul>
-<li><a href="#org22e8772">4.1. PDFs in LaTeX and Raster Image in HTML</a></li>
-<li><a href="#orgc5b1a22">4.2. Links to images and converting PDFs to high quality raster images</a></li>
+<li><a href="#org2d65b31">4.1. PDFs in LaTeX and Raster Image in HTML</a></li>
+<li><a href="#org119d12b">4.2. Links to images and converting PDFs to high quality raster images</a></li>
 </ul>
 </li>
-<li><a href="#orgc8cd6d1">5. Including external code</a></li>
-<li><a href="#orgb4f3a46">6. Inline Code</a></li>
-<li><a href="#org365da5a">7. Code Blocks</a>
+<li><a href="#org02f03f4">5. Including external code</a></li>
+<li><a href="#orgccf6b77">6. Inline Code</a></li>
+<li><a href="#org89e407b">7. Code Blocks</a>
 <ul>
-<li><a href="#orgdcab014">7.1. Text code blocks</a></li>
-<li><a href="#org95b138e">7.2. Email code blocks</a></li>
-<li><a href="#orgd0e2252">7.3. Emacs Lisp</a></li>
-<li><a href="#org8aa5f71">7.4. Emacs Calc</a></li>
-<li><a href="#orgcf0096c">7.5. Maxima</a></li>
-<li><a href="#org30abcb6">7.6. Shells</a></li>
-<li><a href="#org7c3e964">7.7. Ruby</a></li>
+<li><a href="#org2c40725">7.1. Text code blocks</a></li>
+<li><a href="#orgc8d7be7">7.2. Email code blocks</a></li>
+<li><a href="#orgd02bc73">7.3. Emacs Lisp</a></li>
+<li><a href="#org591bb0d">7.4. Emacs Calc</a></li>
+<li><a href="#org07c3a51">7.5. Maxima</a></li>
+<li><a href="#org93485d4">7.6. Shells</a></li>
+<li><a href="#org720fb2b">7.7. Ruby</a></li>
 </ul>
 </li>
-<li><a href="#org1f65d87">8. Fancy Code Block Stuff</a>
+<li><a href="#org012ee8f">8. Fancy Code Block Stuff</a>
 <ul>
-<li><a href="#org20b1984">8.1. Generateing code</a></li>
-<li><a href="#org2e2b4b6">8.2. Code links &amp; Suppress Output</a></li>
-<li><a href="#orgf8bccc2">8.3. Line Numbers</a></li>
+<li><a href="#org604849b">8.1. Using previous results</a></li>
+<li><a href="#org3e74d89">8.2. Generateing code</a></li>
+<li><a href="#orge1591eb">8.3. Code links &amp; Suppress Output</a></li>
+<li><a href="#orgf2a2598">8.4. Line Numbers</a></li>
 </ul>
 </li>
-<li><a href="#org3e1f6db">9. dot</a></li>
-<li><a href="#org2281dd1">10. R</a>
+<li><a href="#org264f19a">9. dot</a></li>
+<li><a href="#org1c87531">10. R</a>
 <ul>
-<li><a href="#orgc3599fb">10.1. Just run some R code in a new session</a></li>
-<li><a href="#org599a7f8">10.2. Access a table in this document as a data.frame</a></li>
-<li><a href="#org8e266ef">10.3. Output from R as a org-mode table</a></li>
-<li><a href="#orgb61a67a">10.4. Run some code in a R persistent session (the someData variable is available for later blocks)</a></li>
-<li><a href="#orgee97900">10.5. Use the someData variable in the session, and draw a graph.</a></li>
-<li><a href="#org1c078bc">10.6. We can use org-mode to make the file too.</a></li>
+<li><a href="#org364294f">10.1. Just run some R code in a new session</a></li>
+<li><a href="#org9325cc6">10.2. Access a table in this document as a data.frame</a></li>
+<li><a href="#org6424487">10.3. Output from R as a org-mode table</a></li>
+<li><a href="#orgc2b9efc">10.4. Run some code in a R persistent session (the someData variable is available for later blocks)</a></li>
+<li><a href="#org3f4c23f">10.5. Use the someData variable in the session, and draw a graph.</a></li>
+<li><a href="#orge4a893d">10.6. We can use org-mode to make the file too.</a></li>
 </ul>
 </li>
-<li><a href="#orgc644f73">11. Reproduciblity</a>
+<li><a href="#orgc80272f">11. Reproduciblity</a>
 <ul>
-<li><a href="#org887c11f">11.1. FILES</a></li>
-<li><a href="#orgb394291">11.2. ENVIRONMENT</a>
+<li><a href="#org16cb513">11.1. FILES</a></li>
+<li><a href="#orgf23f704">11.2. ENVIRONMENT</a>
 <ul>
-<li><a href="#org20cc5c7">11.2.1. Embedded Ruby Version</a></li>
-<li><a href="#org7e56eee">11.2.2. Embedded Perl Version</a></li>
-<li><a href="#orgdf19ff0">11.2.3. Embedded R Information</a>
+<li><a href="#org2e37f6d">11.2.1. Embedded Ruby Version</a></li>
+<li><a href="#orgeeb3198">11.2.2. Embedded Perl Version</a></li>
+<li><a href="#org3f7d76d">11.2.3. Embedded R Information</a>
 <ul>
-<li><a href="#orged10ad7">11.2.3.1. R version</a></li>
-<li><a href="#org6b81db6">11.2.3.2. Session Information</a></li>
-<li><a href="#org204b9b0">11.2.3.3. Loaded Package Versions</a></li>
+<li><a href="#orgf482db0">11.2.3.1. R version</a></li>
+<li><a href="#org8bedc44">11.2.3.2. Session Information</a></li>
+<li><a href="#orgdd4a4c0">11.2.3.3. Loaded Package Versions</a></li>
 </ul>
 </li>
-<li><a href="#orgc0799d7">11.2.4. Emacs Information</a>
+<li><a href="#orgde71313">11.2.4. Emacs Information</a>
 <ul>
-<li><a href="#org1a05c6d">11.2.4.1. Emacs Version</a></li>
-<li><a href="#orgba6b15b">11.2.4.2. org-mode Version</a></li>
-<li><a href="#orgd9a01f3">11.2.4.3. ESS Version</a></li>
-<li><a href="#org813daa1">11.2.4.4. Process Environment</a></li>
-<li><a href="#orgace84bc">11.2.4.5. System Type</a></li>
-<li><a href="#org0e83fb8">11.2.4.6. System Configuration</a></li>
+<li><a href="#orgfbf0731">11.2.4.1. Emacs Version</a></li>
+<li><a href="#org67057a3">11.2.4.2. org-mode Version</a></li>
+<li><a href="#orgaad0405">11.2.4.3. ESS Version</a></li>
+<li><a href="#org3fa4430">11.2.4.4. Process Environment</a></li>
+<li><a href="#orgba9abe9">11.2.4.5. System Type</a></li>
+<li><a href="#org703e2e6">11.2.4.6. System Configuration</a></li>
 </ul>
 </li>
-<li><a href="#org5c7191a">11.2.5. System Information</a></li>
-<li><a href="#org7d4594e">11.2.6. Command Line Tool Information</a></li>
+<li><a href="#orgff9196e">11.2.5. System Information</a></li>
+<li><a href="#org4695b10">11.2.6. Command Line Tool Information</a></li>
 </ul>
 </li>
 </ul>
@@ -387,29 +399,41 @@ I use this files as a template &amp; cut-n-paste source for org-mode documents. 
 </div>
 </div>
 
-<div id="outline-container-org8e7bc29" class="outline-2">
-<h2 id="org8e7bc29"><span class="section-number-2">2.</span> Math</h2>
+<div id="outline-container-org5fe09cd" class="outline-2">
+<h2 id="org5fe09cd"><span class="section-number-2">2.</span> Math</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Here is some math \(5+3^4\).
+Here is some math \( 5+3^4 \).
 </p>
 
 <p>
-Reminder: toggle inline preview of an expression with C-c C-x C-l
+Display inline preview of an expression at/near point with C-c C-x C-l
+</p>
+<ul class="org-ul">
+<li>With C-u, clear images for fragments in current section.</li>
+<li>With C-u C-y, clear images for fragments in buffer</li>
+</ul>
+
+<p>
+Here is some display math \[ \sum 4 \]
 </p>
 
 <p>
-Here is some display math \[\sum 4\]
+\[\begin{align*}
+   \frac{dx}{dt} & = a(y-x)   \\
+   \frac{dy}{dt} & = x(b-z)-y \\
+   \frac{dz}{dt} & = xy-cz
+ \end{align*}\]
 </p>
 </div>
 </div>
 
-<div id="outline-container-org066f937" class="outline-2">
-<h2 id="org066f937"><span class="section-number-2">3.</span> Markup</h2>
+<div id="outline-container-org7443b03" class="outline-2">
+<h2 id="org7443b03"><span class="section-number-2">3.</span> Markup</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgcb6bba2" class="outline-3">
-<h3 id="orgcb6bba2"><span class="section-number-3">3.1.</span> Inline stuff</h3>
+<div id="outline-container-orgcf56872" class="outline-3">
+<h3 id="orgcf56872"><span class="section-number-3">3.1.</span> Inline stuff</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Some <b>bold</b> text.
@@ -437,12 +461,12 @@ Some <del>strike-through</del> text.
 </div>
 </div>
 
-<div id="outline-container-org889a827" class="outline-3">
-<h3 id="org889a827"><span class="section-number-3">3.2.</span> Structural stuff</h3>
+<div id="outline-container-orgd5f48d2" class="outline-3">
+<h3 id="orgd5f48d2"><span class="section-number-3">3.2.</span> Structural stuff</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org45636e4" class="outline-4">
-<h4 id="org45636e4"><span class="section-number-4">3.2.1.</span> Special Paragraphs</h4>
+<div id="outline-container-org5d92c2e" class="outline-4">
+<h4 id="org5d92c2e"><span class="section-number-4">3.2.1.</span> Special Paragraphs</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 Some centered stuff.  Text, graphics, whatever&#x2026;
@@ -482,7 +506,7 @@ the hottest blood of all, and the wildest, the most urgent.<br />
 <p>
 We can have a "verbatim" section with an "EXAMPLE" block.
 </p>
-<pre class="example" id="orge6068b2">
+<pre class="example" id="org7bf6840">
      Here is some text.
 Note that
  everything is    just as typed.
@@ -490,12 +514,12 @@ Note that
 </div>
 </div>
 
-<div id="outline-container-org08beb29" class="outline-4">
-<h4 id="org08beb29"><span class="section-number-4">3.2.2.</span> Tables</h4>
+<div id="outline-container-org18f6fcc" class="outline-4">
+<h4 id="org18f6fcc"><span class="section-number-4">3.2.2.</span> Tables</h4>
 <div class="outline-text-4" id="text-3-2-2">
 </div>
-<div id="outline-container-orge3272d5" class="outline-5">
-<h5 id="orge3272d5"><span class="section-number-5">3.2.2.1.</span> With formatting &amp; a formula</h5>
+<div id="outline-container-org9a18f32" class="outline-5">
+<h5 id="org9a18f32"><span class="section-number-5">3.2.2.1.</span> With formatting &amp; a formula</h5>
 <div class="outline-text-5" id="text-3-2-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" align="center">
 <caption class="t-above"><span class="table-number">Table 1:</span> A formatted table</caption>
@@ -540,12 +564,12 @@ Note that
 </div>
 </div>
 
-<div id="outline-container-org4cf0455" class="outline-5">
-<h5 id="org4cf0455"><span class="section-number-5">3.2.2.2.</span> Tables used to hold data</h5>
+<div id="outline-container-org6883fd7" class="outline-5">
+<h5 id="org6883fd7"><span class="section-number-5">3.2.2.2.</span> Tables used to hold data</h5>
 <div class="outline-text-5" id="text-3-2-2-2">
 <p>
 We can use tables to hold data for other blocks to read in the document.  The
-section <a href="#org599a7f8">10.2</a> shows how to access
+section <a href="#org9325cc6">10.2</a> shows how to access
 the table below from R.  Note some specifics for R:
 </p>
 <ul class="org-ul">
@@ -555,7 +579,7 @@ the table below from R.  Note some specifics for R:
 <li>Non-numeric columns will be "characters" not "factors"</li>
 </ul>
 
-<table id="org62472dc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgb69dab4" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
@@ -609,8 +633,8 @@ the table below from R.  Note some specifics for R:
 </div>
 </div>
 
-<div id="outline-container-orgd9bbf11" class="outline-4">
-<h4 id="orgd9bbf11"><span class="section-number-4">3.2.3.</span> Lists</h4>
+<div id="outline-container-org83f55f8" class="outline-4">
+<h4 id="org83f55f8"><span class="section-number-4">3.2.3.</span> Lists</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 Here is itemized list:
@@ -650,42 +674,42 @@ A bit of both:
 </div>
 </div>
 
-<div id="outline-container-orga66fdc0" class="outline-3">
-<h3 id="orga66fdc0"><span class="section-number-3">3.3.</span> Todo/action items</h3>
+<div id="outline-container-org51a7f43" class="outline-3">
+<h3 id="org51a7f43"><span class="section-number-3">3.3.</span> Todo/action items</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-orgf3d479f" class="outline-4">
-<h4 id="orgf3d479f"><span class="section-number-4">3.3.1.</span> <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</h4>
+<div id="outline-container-org4913048" class="outline-4">
+<h4 id="org4913048"><span class="section-number-4">3.3.1.</span> <span class="todo TODO_NEW">TODO:NEW</span> This is a todo</h4>
 <div class="outline-text-4" id="text-3-3-1">
 </div>
 </div>
 
-<div id="outline-container-org3bf04da" class="outline-4">
-<h4 id="org3bf04da"><span class="section-number-4">3.3.2.</span> ACTION:DONE This is an action item &#x2013; work speak. ;)</h4>
+<div id="outline-container-org17c8bf0" class="outline-4">
+<h4 id="org17c8bf0"><span class="section-number-4">3.3.2.</span> ACTION:DONE This is an action item &#x2013; work speak. ;)</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2015-11-01 Sun 22:36] </span> <span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2015-11-01 Sun&gt;</span></span></p>
 </div>
 </div>
 
-<div id="outline-container-org245970d" class="outline-4">
-<h4 id="org245970d"><span class="section-number-4">3.3.3.</span> ACTION:NEW This is an item with sub-items <code>[1/2]</code></h4>
+<div id="outline-container-org8f8e0b0" class="outline-4">
+<h4 id="org8f8e0b0"><span class="section-number-4">3.3.3.</span> ACTION:NEW This is an item with sub-items <code>[1/2]</code></h4>
 <div class="outline-text-4" id="text-3-3-3">
 </div>
-<div id="outline-container-org73a9c1c" class="outline-5">
-<h5 id="org73a9c1c"><span class="section-number-5">3.3.3.1.</span> ACTION:DONE A subitem</h5>
+<div id="outline-container-orga637860" class="outline-5">
+<h5 id="orga637860"><span class="section-number-5">3.3.3.1.</span> ACTION:DONE A subitem</h5>
 <div class="outline-text-5" id="text-3-3-3-1">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2015-11-01 Sun 22:39]</span></span></p>
 </div>
 </div>
-<div id="outline-container-org3d95d1e" class="outline-5">
-<h5 id="org3d95d1e"><span class="section-number-5">3.3.3.2.</span> ACTION:NEW Another subitem</h5>
+<div id="outline-container-org27d41d3" class="outline-5">
+<h5 id="org27d41d3"><span class="section-number-5">3.3.3.2.</span> ACTION:NEW Another subitem</h5>
 <div class="outline-text-5" id="text-3-3-3-2">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0934180" class="outline-4">
-<h4 id="org0934180"><span class="section-number-4">3.3.4.</span> ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></h4>
+<div id="outline-container-org8d16b6c" class="outline-4">
+<h4 id="org8d16b6c"><span class="section-number-4">3.3.4.</span> ACTION:NEW Here is an action item with list compoents <code>[2/3]</code></h4>
 <div class="outline-text-4" id="text-3-3-4">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2015-11-03 Tue&gt; </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2015-11-01 Sun&gt;</span></span></p>
 <ul class="org-ul">
@@ -698,12 +722,12 @@ A bit of both:
 </div>
 </div>
 
-<div id="outline-container-org6624583" class="outline-2">
-<h2 id="org6624583"><span class="section-number-2">4.</span> Images</h2>
+<div id="outline-container-org1a3487e" class="outline-2">
+<h2 id="org1a3487e"><span class="section-number-2">4.</span> Images</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org22e8772" class="outline-3">
-<h3 id="org22e8772"><span class="section-number-3">4.1.</span> PDFs in LaTeX and Raster Image in HTML</h3>
+<div id="outline-container-org2d65b31" class="outline-3">
+<h3 id="org2d65b31"><span class="section-number-3">4.1.</span> PDFs in LaTeX and Raster Image in HTML</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 In this Section you will see one image.  A PNG for HTML, and a PDF for LaTeX!
@@ -717,15 +741,19 @@ In this Section you will see one image.  A PNG for HTML, and a PDF for LaTeX!
 </div>
 </div>
 
-<div id="outline-container-orgc5b1a22" class="outline-3">
-<h3 id="orgc5b1a22"><span class="section-number-3">4.2.</span> Links to images and converting PDFs to high quality raster images</h3>
+<div id="outline-container-org119d12b" class="outline-3">
+<h3 id="org119d12b"><span class="section-number-3">4.2.</span> Links to images and converting PDFs to high quality raster images</h3>
 <div class="outline-text-3" id="text-4-2">
+<p>
+Reminder: toggle inline preview of images with: C-c C-x C-v
+</p>
+
 <p>
 Here we have a pretty graph (in a PNG file):
 </p>
 
 
-<div id="org17053e6" class="figure">
+<div id="org656c211" class="figure">
 <p><img src="example.png" alt="example.png" width="1024" align="center" />
 </p>
 </div>
@@ -747,8 +775,8 @@ The conversion was done like so:
 </div>
 </div>
 
-<div id="outline-container-orgc8cd6d1" class="outline-2">
-<h2 id="orgc8cd6d1"><span class="section-number-2">5.</span> Including external code</h2>
+<div id="outline-container-org02f03f4" class="outline-2">
+<h2 id="org02f03f4"><span class="section-number-2">5.</span> Including external code</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Some Ruby code is the file <a href="example.rb">example.rb</a>.  It's contents are listed below:
@@ -809,8 +837,8 @@ We can include just the stuff after the top comment like this:
 </div>
 </div>
 
-<div id="outline-container-orgb4f3a46" class="outline-2">
-<h2 id="orgb4f3a46"><span class="section-number-2">6.</span> Inline Code</h2>
+<div id="outline-container-orgccf6b77" class="outline-2">
+<h2 id="orgccf6b77"><span class="section-number-2">6.</span> Inline Code</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Here is a number, <code>6</code> <code>6</code>, that comes from a bit of elisp code.
@@ -818,12 +846,12 @@ Here is a number, <code>6</code> <code>6</code>, that comes from a bit of elisp 
 </div>
 </div>
 
-<div id="outline-container-org365da5a" class="outline-2">
-<h2 id="org365da5a"><span class="section-number-2">7.</span> Code Blocks</h2>
+<div id="outline-container-org89e407b" class="outline-2">
+<h2 id="org89e407b"><span class="section-number-2">7.</span> Code Blocks</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgdcab014" class="outline-3">
-<h3 id="orgdcab014"><span class="section-number-3">7.1.</span> Text code blocks</h3>
+<div id="outline-container-org2c40725" class="outline-3">
+<h3 id="org2c40725"><span class="section-number-3">7.1.</span> Text code blocks</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 Text code blocks can be used as a kind of verbatum environment instead of BEGIN_EXAMPLE.  This gives more control over formatting.  See the Email example next.
@@ -839,8 +867,8 @@ Text code blocks can be used as a kind of verbatum environment instead of BEGIN_
 </div>
 </div>
 
-<div id="outline-container-org95b138e" class="outline-3">
-<h3 id="org95b138e"><span class="section-number-3">7.2.</span> Email code blocks</h3>
+<div id="outline-container-orgc8d7be7" class="outline-3">
+<h3 id="orgc8d7be7"><span class="section-number-3">7.2.</span> Email code blocks</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 This is nice because we get some highlighting for quoted e-mails and threads.
@@ -856,8 +884,8 @@ This is nice because we get some highlighting for quoted e-mails and threads.
 </div>
 </div>
 
-<div id="outline-container-orgd0e2252" class="outline-3">
-<h3 id="orgd0e2252"><span class="section-number-3">7.3.</span> Emacs Lisp</h3>
+<div id="outline-container-orgd02bc73" class="outline-3">
+<h3 id="orgd02bc73"><span class="section-number-3">7.3.</span> Emacs Lisp</h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
 While you can use "<code>value</code>" insead of "<code>output</code>" for code blocks, it really is <b>very</b> usefull for Emacs Lisp.
@@ -881,8 +909,8 @@ tangle.  When evaluating an entire document this can be used to advantage to seq
 </div>
 </div>
 
-<div id="outline-container-org8aa5f71" class="outline-3">
-<h3 id="org8aa5f71"><span class="section-number-3">7.4.</span> Emacs Calc</h3>
+<div id="outline-container-org591bb0d" class="outline-3">
+<h3 id="org591bb0d"><span class="section-number-3">7.4.</span> Emacs Calc</h3>
 <div class="outline-text-3" id="text-7-4">
 <p>
 For more complex mathematical computations done with just Emacs (no outside tools) we can use calc.
@@ -893,14 +921,14 @@ For more complex mathematical computations done with just Emacs (no outside tool
 </pre>
 </div>
 
-<pre class="example" id="org0aabd8f">
+<pre class="example" id="orgd8dc5a1">
 6 x + 1 / x
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgcf0096c" class="outline-3">
-<h3 id="orgcf0096c"><span class="section-number-3">7.5.</span> Maxima</h3>
+<div id="outline-container-org07c3a51" class="outline-3">
+<h3 id="org07c3a51"><span class="section-number-3">7.5.</span> Maxima</h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
 For super complex math, we can use maxima.  
@@ -917,7 +945,7 @@ d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>
 </pre>
 </div>
 
-<pre class="example" id="org50090f4">
+<pre class="example" id="orgd417eb6">
       1
 6 x + - 
       x
@@ -935,7 +963,7 @@ d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>
 </pre>
 </div>
 
-<pre class="example" id="org0e0225e">
+<pre class="example" id="org8f1a487">
 6*x+1/x 
 </pre>
 
@@ -983,42 +1011,58 @@ d<span style="color: #00ffff;">:</span><span style="color: #b0c4de;">diff</span>
 </div>
 </div>
 
-<div id="outline-container-org30abcb6" class="outline-3">
-<h3 id="org30abcb6"><span class="section-number-3">7.6.</span> Shells</h3>
+<div id="outline-container-org93485d4" class="outline-3">
+<h3 id="org93485d4"><span class="section-number-3">7.6.</span> Shells</h3>
 <div class="outline-text-3" id="text-7-6">
 <div class="org-src-container">
 <pre class="src src-sh">date <span style="color: #fa8072;">"+%Y-%m-%d %H:%M:%S"</span>
 </pre>
 </div>
 
-<pre class="example" id="org3062d13">
+<pre class="example" id="orgaeb46d4">
 2022-05-08 13:12:40
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org7c3e964" class="outline-3">
-<h3 id="org7c3e964"><span class="section-number-3">7.7.</span> Ruby</h3>
+<div id="outline-container-org720fb2b" class="outline-3">
+<h3 id="org720fb2b"><span class="section-number-3">7.7.</span> Ruby</h3>
 <div class="outline-text-3" id="text-7-7">
 <div class="org-src-container">
-<pre class="src src-ruby"><span style="color: #b0c4de;">puts</span>(<span style="color: #fa8072;">"HI MOM"</span>)
+<pre class="src src-ruby" id="orgef69039"><span style="color: #b0c4de;">puts</span>(<span style="color: #fa8072;">"HI MOM"</span>)
 </pre>
 </div>
 
-<pre class="example" id="orgfe94a29">
+<pre class="example" id="org2599770">
 HI MOM
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1f65d87" class="outline-2">
-<h2 id="org1f65d87"><span class="section-number-2">8.</span> Fancy Code Block Stuff</h2>
+<div id="outline-container-org012ee8f" class="outline-2">
+<h2 id="org012ee8f"><span class="section-number-2">8.</span> Fancy Code Block Stuff</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org20b1984" class="outline-3">
-<h3 id="org20b1984"><span class="section-number-3">8.1.</span> Generateing code</h3>
+<div id="outline-container-org604849b" class="outline-3">
+<h3 id="org604849b"><span class="section-number-3">8.1.</span> Using previous results</h3>
 <div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(princ other_result)
+</pre>
+</div>
+
+<pre class="example" id="orgd2e072b">
+"HI MOM
+"
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org3e74d89" class="outline-3">
+<h3 id="org3e74d89"><span class="section-number-3">8.2.</span> Generateing code</h3>
+<div class="outline-text-3" id="text-8-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(<span style="color: #00ffff;">cl-loop</span> for f in '(<span style="color: #fa8072;">"foo"</span> <span style="color: #fa8072;">"bar"</span>)
          do (princ (format <span style="color: #fa8072;">"mv \"%s\" \"%s.bak\" # Rename %s\n"</span> f f f)))
@@ -1027,9 +1071,9 @@ HI MOM
 </div>
 </div>
 
-<div id="outline-container-org2e2b4b6" class="outline-3">
-<h3 id="org2e2b4b6"><span class="section-number-3">8.2.</span> Code links &amp; Suppress Output</h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-orge1591eb" class="outline-3">
+<h3 id="orge1591eb"><span class="section-number-3">8.3.</span> Code links &amp; Suppress Output</h3>
+<div class="outline-text-3" id="text-8-3">
 <p>
 You can link to a target inside a code block: <a href="#coderef-foo" class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-foo');" onmouseout="CodeHighlightOff(this, 'coderef-foo');">Visible Link Text</a>
 </p>
@@ -1052,9 +1096,9 @@ white.
 </div>
 </div>
 
-<div id="outline-container-orgf8bccc2" class="outline-3">
-<h3 id="orgf8bccc2"><span class="section-number-3">8.3.</span> Line Numbers</h3>
-<div class="outline-text-3" id="text-8-3">
+<div id="outline-container-orgf2a2598" class="outline-3">
+<h3 id="orgf2a2598"><span class="section-number-3">8.4.</span> Line Numbers</h3>
+<div class="outline-text-3" id="text-8-4">
 <p>
 This will include line numbers in the block when exported
 </p>
@@ -1068,41 +1112,41 @@ This will include line numbers in the block when exported
 </div>
 </div>
 
-<div id="outline-container-org3e1f6db" class="outline-2">
-<h2 id="org3e1f6db"><span class="section-number-2">9.</span> dot</h2>
+<div id="outline-container-org264f19a" class="outline-2">
+<h2 id="org264f19a"><span class="section-number-2">9.</span> dot</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Here we do not export the code, just the results &#x2013; as an image.  This results in a nice rendering.
 </p>
 
 
-<div id="orge147fb4" class="figure">
+<div id="org297f509" class="figure">
 <p><img src="dotResult.png" alt="dotResult.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2281dd1" class="outline-2">
-<h2 id="org2281dd1"><span class="section-number-2">10.</span> R</h2>
+<div id="outline-container-org1c87531" class="outline-2">
+<h2 id="org1c87531"><span class="section-number-2">10.</span> R</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-orgc3599fb" class="outline-3">
-<h3 id="orgc3599fb"><span class="section-number-3">10.1.</span> Just run some R code in a new session</h3>
+<div id="outline-container-org364294f" class="outline-3">
+<h3 id="org364294f"><span class="section-number-3">10.1.</span> Just run some R code in a new session</h3>
 <div class="outline-text-3" id="text-10-1">
 <div class="org-src-container">
 <pre class="src src-R">print(<span style="color: #fa8072;">"HI MOM"</span>)
 </pre>
 </div>
 
-<pre class="example" id="orgd927ea9">
+<pre class="example" id="orgbb4ca23">
 [1] "HI MOM"
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org599a7f8" class="outline-3">
-<h3 id="org599a7f8"><span class="section-number-3">10.2.</span> Access a table in this document as a data.frame</h3>
+<div id="outline-container-org9325cc6" class="outline-3">
+<h3 id="org9325cc6"><span class="section-number-3">10.2.</span> Access a table in this document as a data.frame</h3>
 <div class="outline-text-3" id="text-10-2">
 <div class="org-src-container">
 <pre class="src src-R">someData
@@ -1120,8 +1164,8 @@ Here we do not export the code, just the results &#x2013; as an image.  This res
 </div>
 </div>
 
-<div id="outline-container-org8e266ef" class="outline-3">
-<h3 id="org8e266ef"><span class="section-number-3">10.3.</span> Output from R as a org-mode table</h3>
+<div id="outline-container-org6424487" class="outline-3">
+<h3 id="org6424487"><span class="section-number-3">10.3.</span> Output from R as a org-mode table</h3>
 <div class="outline-text-3" id="text-10-3">
 <div class="org-src-container">
 <pre class="src src-R">someData
@@ -1173,8 +1217,8 @@ Here we do not export the code, just the results &#x2013; as an image.  This res
 </div>
 </div>
 
-<div id="outline-container-orgb61a67a" class="outline-3">
-<h3 id="orgb61a67a"><span class="section-number-3">10.4.</span> Run some code in a R persistent session (the someData variable is available for later blocks)</h3>
+<div id="outline-container-orgc2b9efc" class="outline-3">
+<h3 id="orgc2b9efc"><span class="section-number-3">10.4.</span> Run some code in a R persistent session (the someData variable is available for later blocks)</h3>
 <div class="outline-text-3" id="text-10-4">
 <div class="org-src-container">
 <pre class="src src-R">someData <span style="color: #8470ff; font-weight: bold;">&lt;-</span> data.frame(a=1:10, b=rnorm(10))
@@ -1184,8 +1228,8 @@ print(someData)
 </div>
 </div>
 
-<div id="outline-container-orgee97900" class="outline-3">
-<h3 id="orgee97900"><span class="section-number-3">10.5.</span> Use the someData variable in the session, and draw a graph.</h3>
+<div id="outline-container-org3f4c23f" class="outline-3">
+<h3 id="org3f4c23f"><span class="section-number-3">10.5.</span> Use the someData variable in the session, and draw a graph.</h3>
 <div class="outline-text-3" id="text-10-5">
 <p>
 No speical org-mode stuff for graphics.  Just saved the output in files via R.  Add link text later.
@@ -1203,7 +1247,7 @@ The graph:
 </p>
 
 
-<div id="org5a87937" class="figure">
+<div id="orgb972615" class="figure">
 <p><img src="rOut1.png" alt="rOut1.png" />
 </p>
 </div>
@@ -1214,8 +1258,8 @@ A high quality PDF version is <a href="rOut1.pdf">here</a> &#x2013; note the "he
 </div>
 </div>
 
-<div id="outline-container-org1c078bc" class="outline-3">
-<h3 id="org1c078bc"><span class="section-number-3">10.6.</span> We can use org-mode to make the file too.</h3>
+<div id="outline-container-orge4a893d" class="outline-3">
+<h3 id="orge4a893d"><span class="section-number-3">10.6.</span> We can use org-mode to make the file too.</h3>
 <div class="outline-text-3" id="text-10-6">
 <p>
 Note: :session is required for this to work &#x2013; otherwise we must "print" the graphic.
@@ -1227,7 +1271,7 @@ Note: :session is required for this to work &#x2013; otherwise we must "print" t
 </div>
 
 
-<div id="orga7d62a8" class="figure">
+<div id="orga01ed64" class="figure">
 <p><img src="rOut1.png" alt="rOut1.png" />
 </p>
 </div>
@@ -1235,8 +1279,8 @@ Note: :session is required for this to work &#x2013; otherwise we must "print" t
 </div>
 </div>
 
-<div id="outline-container-orgc644f73" class="outline-2">
-<h2 id="orgc644f73"><span class="section-number-2">11.</span> Reproduciblity</h2>
+<div id="outline-container-orgc80272f" class="outline-2">
+<h2 id="orgc80272f"><span class="section-number-2">11.</span> Reproduciblity</h2>
 <div class="outline-text-2" id="text-11">
 <p>
 This section is here to help anyone wishing to reproduce the results above, or to understand the mechanics of how the results were obtained..
@@ -1247,8 +1291,8 @@ Reminder: All blocks in the entire tree can be evaluated with C-C C-V C-S
 </p>
 </div>
 
-<div id="outline-container-org887c11f" class="outline-3">
-<h3 id="org887c11f"><span class="section-number-3">11.1.</span> FILES</h3>
+<div id="outline-container-org16cb513" class="outline-3">
+<h3 id="org16cb513"><span class="section-number-3">11.1.</span> FILES</h3>
 <div class="outline-text-3" id="text-11-1">
 <p>
 Documented in this section are (for each file in this archive):
@@ -1283,8 +1327,8 @@ Replace the <code>`find ./ -type f`</code> with a list of files and/or wildcards
 </div>
 </div>
 
-<div id="outline-container-orgb394291" class="outline-3">
-<h3 id="orgb394291"><span class="section-number-3">11.2.</span> ENVIRONMENT</h3>
+<div id="outline-container-orgf23f704" class="outline-3">
+<h3 id="orgf23f704"><span class="section-number-3">11.2.</span> ENVIRONMENT</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 The input files are only part of the reproduciblity equation.  It is also important to understand the tools and computational environment used for the
@@ -1292,8 +1336,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </p>
 </div>
 
-<div id="outline-container-org20cc5c7" class="outline-4">
-<h4 id="org20cc5c7"><span class="section-number-4">11.2.1.</span> Embedded Ruby Version</h4>
+<div id="outline-container-org2e37f6d" class="outline-4">
+<h4 id="org2e37f6d"><span class="section-number-4">11.2.1.</span> Embedded Ruby Version</h4>
 <div class="outline-text-4" id="text-11-2-1">
 <div class="org-src-container">
 <pre class="src src-ruby"><span style="color: #b0c4de;">puts</span>(<span style="color: #63b8ff;">RUBY_VERSION</span>)
@@ -1302,8 +1346,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org7e56eee" class="outline-4">
-<h4 id="org7e56eee"><span class="section-number-4">11.2.2.</span> Embedded Perl Version</h4>
+<div id="outline-container-orgeeb3198" class="outline-4">
+<h4 id="orgeeb3198"><span class="section-number-4">11.2.2.</span> Embedded Perl Version</h4>
 <div class="outline-text-4" id="text-11-2-2">
 <div class="org-src-container">
 <pre class="src src-perl">print $]
@@ -1312,12 +1356,12 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-orgdf19ff0" class="outline-4">
-<h4 id="orgdf19ff0"><span class="section-number-4">11.2.3.</span> Embedded R Information</h4>
+<div id="outline-container-org3f7d76d" class="outline-4">
+<h4 id="org3f7d76d"><span class="section-number-4">11.2.3.</span> Embedded R Information</h4>
 <div class="outline-text-4" id="text-11-2-3">
 </div>
-<div id="outline-container-orged10ad7" class="outline-5">
-<h5 id="orged10ad7"><span class="section-number-5">11.2.3.1.</span> R version</h5>
+<div id="outline-container-orgf482db0" class="outline-5">
+<h5 id="orgf482db0"><span class="section-number-5">11.2.3.1.</span> R version</h5>
 <div class="outline-text-5" id="text-11-2-3-1">
 <div class="org-src-container">
 <pre class="src src-R">R.version
@@ -1326,8 +1370,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org6b81db6" class="outline-5">
-<h5 id="org6b81db6"><span class="section-number-5">11.2.3.2.</span> Session Information</h5>
+<div id="outline-container-org8bedc44" class="outline-5">
+<h5 id="org8bedc44"><span class="section-number-5">11.2.3.2.</span> Session Information</h5>
 <div class="outline-text-5" id="text-11-2-3-2">
 <div class="org-src-container">
 <pre class="src src-R">sessionInfo()
@@ -1336,8 +1380,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org204b9b0" class="outline-5">
-<h5 id="org204b9b0"><span class="section-number-5">11.2.3.3.</span> Loaded Package Versions</h5>
+<div id="outline-container-orgdd4a4c0" class="outline-5">
+<h5 id="orgdd4a4c0"><span class="section-number-5">11.2.3.3.</span> Loaded Package Versions</h5>
 <div class="outline-text-5" id="text-11-2-3-3">
 <div class="org-src-container">
 <pre class="src src-R">installed.packages()[(loadedNamespaces()),c(<span style="color: #fa8072;">'Version'</span>, <span style="color: #fa8072;">'LibPath'</span>)]
@@ -1347,12 +1391,12 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-orgc0799d7" class="outline-4">
-<h4 id="orgc0799d7"><span class="section-number-4">11.2.4.</span> Emacs Information</h4>
+<div id="outline-container-orgde71313" class="outline-4">
+<h4 id="orgde71313"><span class="section-number-4">11.2.4.</span> Emacs Information</h4>
 <div class="outline-text-4" id="text-11-2-4">
 </div>
-<div id="outline-container-org1a05c6d" class="outline-5">
-<h5 id="org1a05c6d"><span class="section-number-5">11.2.4.1.</span> Emacs Version</h5>
+<div id="outline-container-orgfbf0731" class="outline-5">
+<h5 id="orgfbf0731"><span class="section-number-5">11.2.4.1.</span> Emacs Version</h5>
 <div class="outline-text-5" id="text-11-2-4-1">
 <div class="org-src-container">
 <pre class="src src-elisp">(emacs-version)
@@ -1361,8 +1405,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-orgba6b15b" class="outline-5">
-<h5 id="orgba6b15b"><span class="section-number-5">11.2.4.2.</span> org-mode Version</h5>
+<div id="outline-container-org67057a3" class="outline-5">
+<h5 id="org67057a3"><span class="section-number-5">11.2.4.2.</span> org-mode Version</h5>
 <div class="outline-text-5" id="text-11-2-4-2">
 <div class="org-src-container">
 <pre class="src src-elisp">org-version
@@ -1371,8 +1415,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-orgd9a01f3" class="outline-5">
-<h5 id="orgd9a01f3"><span class="section-number-5">11.2.4.3.</span> ESS Version</h5>
+<div id="outline-container-orgaad0405" class="outline-5">
+<h5 id="orgaad0405"><span class="section-number-5">11.2.4.3.</span> ESS Version</h5>
 <div class="outline-text-5" id="text-11-2-4-3">
 <div class="org-src-container">
 <pre class="src src-elisp">(ess-version)
@@ -1381,8 +1425,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org813daa1" class="outline-5">
-<h5 id="org813daa1"><span class="section-number-5">11.2.4.4.</span> Process Environment</h5>
+<div id="outline-container-org3fa4430" class="outline-5">
+<h5 id="org3fa4430"><span class="section-number-5">11.2.4.4.</span> Process Environment</h5>
 <div class="outline-text-5" id="text-11-2-4-4">
 <div class="org-src-container">
 <pre class="src src-elisp">process-environment
@@ -1391,8 +1435,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-orgace84bc" class="outline-5">
-<h5 id="orgace84bc"><span class="section-number-5">11.2.4.5.</span> System Type</h5>
+<div id="outline-container-orgba9abe9" class="outline-5">
+<h5 id="orgba9abe9"><span class="section-number-5">11.2.4.5.</span> System Type</h5>
 <div class="outline-text-5" id="text-11-2-4-5">
 <div class="org-src-container">
 <pre class="src src-elisp">system-type
@@ -1401,8 +1445,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org0e83fb8" class="outline-5">
-<h5 id="org0e83fb8"><span class="section-number-5">11.2.4.6.</span> System Configuration</h5>
+<div id="outline-container-org703e2e6" class="outline-5">
+<h5 id="org703e2e6"><span class="section-number-5">11.2.4.6.</span> System Configuration</h5>
 <div class="outline-text-5" id="text-11-2-4-6">
 <div class="org-src-container">
 <pre class="src src-elisp">system-configuration
@@ -1412,8 +1456,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org5c7191a" class="outline-4">
-<h4 id="org5c7191a"><span class="section-number-4">11.2.5.</span> System Information</h4>
+<div id="outline-container-orgff9196e" class="outline-4">
+<h4 id="orgff9196e"><span class="section-number-4">11.2.5.</span> System Information</h4>
 <div class="outline-text-4" id="text-11-2-5">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #00ffff;">for</span> e<span style="color: #00ffff;"> in</span> date whoami groups id hostname domainname dnsdomainname <span style="color: #fa8072;">'ifconfig -a'</span> <span style="color: #fa8072;">'uname -a'</span> <span style="color: #fa8072;">'openssl version'</span> locale <span style="color: #fa8072;">'ldconfig -p'</span> <span style="color: #fa8072;">'dpkg-query -l'</span>; <span style="color: #00ffff;">do</span>
@@ -1429,8 +1473,8 @@ original analysis.  This section contains various bits of meta-data about the to
 </div>
 </div>
 
-<div id="outline-container-org7d4594e" class="outline-4">
-<h4 id="org7d4594e"><span class="section-number-4">11.2.6.</span> Command Line Tool Information</h4>
+<div id="outline-container-org4695b10" class="outline-4">
+<h4 id="org4695b10"><span class="section-number-4">11.2.6.</span> Command Line Tool Information</h4>
 <div class="outline-text-4" id="text-11-2-6">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #00ffff;">for</span> e<span style="color: #00ffff;"> in</span> gcc g++ gfortran                               <span style="color: #000000; background-color: #f0e68c; font-weight: bold;">\</span>

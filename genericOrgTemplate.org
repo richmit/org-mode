@@ -56,7 +56,6 @@ Copyright \copy {{{time(%Y)}}} Mitch Richling. All rights reserved.
 # To get org to evaluate all code blocks on export, add the following to the Emacs header on the first line of this file:
 #     org-export-babel-evaluate:t; org-confirm-babel-evaluate:nil
 #
-# C-c C-x C-v (org-toggle-inline-images)
 #
 
 * Introduction
@@ -68,11 +67,19 @@ I use this files as a template & cut-n-paste source for org-mode documents.  As 
 
 * Math
 
-Here is some math $5+3^4$.
+Here is some math \( 5+3^4 \).
 
-Reminder: toggle inline preview of an expression with C-c C-x C-l
+Display inline preview of an expression at/near point with C-c C-x C-l
+ - With C-u, clear images for fragments in current section.
+ - With C-u C-y, clear images for fragments in buffer
 
-Here is some display math $$\sum 4$$
+Here is some display math \[ \sum 4 \]
+
+ $$\begin{align*}
+   \frac{dx}{dt} & = a(y-x)   \\
+   \frac{dy}{dt} & = x(b-z)-y \\
+   \frac{dz}{dt} & = xy-cz
+ \end{align*}$$
 
 * Markup
 
@@ -250,6 +257,8 @@ In this Section you will see one image.  A PNG for HTML, and a PDF for LaTeX!
 # #+LATEX: 
 
 ** Links to images and converting PDFs to high quality raster images
+
+Reminder: toggle inline preview of images with: C-c C-x C-v
 
 Here we have a pretty graph (in a PNG file):
 
@@ -440,16 +449,31 @@ date "+%Y-%m-%d %H:%M:%S"
 
 ** Ruby
 
+#+name: himom
 #+BEGIN_SRC ruby :exports both :results output verbatim
 puts("HI MOM")
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS: himom
 #+begin_example
 HI MOM
 #+end_example
 
 * Fancy Code Block Stuff
+
+** Using previous results
+
+#+begin_src elisp :exports both :results output verbatim :var other_result=himom
+(princ other_result)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+"HI MOM
+"
+#+end_example
+
+
 ** Generateing code
 
 #+BEGIN_SRC elisp :results output verbatum :wrap src bash :wrap "src sh :eval never :tangle no"
